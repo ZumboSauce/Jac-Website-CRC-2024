@@ -1,4 +1,6 @@
 # Jac-Website-CRC-2024
 
-This works ig, cool 
--Avery having some fun with git
+assets for imgs and fonts and stuff
+common for reused elements on multiple pages (headers, sidebars)
+views for per-page
+>>>>>>> ea9c64dd04c5e6e75b03480f0f08505e337cd883
