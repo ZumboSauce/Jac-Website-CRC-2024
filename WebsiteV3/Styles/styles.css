@@ -1,0 +1,14 @@
+html{
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+
+}
+
+.off {
+    display: none;
+}
