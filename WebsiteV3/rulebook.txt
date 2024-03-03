@@ -1,0 +1,23 @@
+link to the rulebook: https://new.robo-crc.ca/wp-content/uploads/2023/11/Full_Rulebook_Kryptik2024_EN.pdf
+TECHNICAL REQUIREMENTS:
+-must work on chrome, firefox, safari
+-dont have errors
+-valid against standards
+WEBSITE CONTENT:
+-has to be fully bilingual, with all text same language as locale
+-roster of every member's name, subteam and contribution. images are optional
+-describe competition components and goal, must have date time and location too and name
+-describe what the game is
+-steps in design and construction of robot
+-conception plans and drawings
+-most recent designs and concepts for robot
+-photos of robot during construction
+-progress in each component of competition
+-hardships during work
+-solutions to hardships
+STUDENT EXPERIENCE DOCUMENTATION:
+-things learned
+-things enjoyed
+-struggles
+-sacrifices
+DONT HAVE ILLEGAL STUFF
