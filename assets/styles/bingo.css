@@ -1,3 +1,6 @@
+@import url('/assets/common/button_mc/styles.css');
+@import url('/assets/common/sign_mc/styles.css');
+
 .mc-login {
     height: 100vh;
     width: 100vw;
