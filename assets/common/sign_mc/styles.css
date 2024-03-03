@@ -1,9 +1,9 @@
 .mc-sign{
+    /*ADD SHADOW TO SIGN*/
     background-image: url('/assets/img/sign_oak.webp');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
-    aspect-ratio: 2;
 }
 
 .mc-sign-input {

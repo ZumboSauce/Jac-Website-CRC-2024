@@ -8,24 +8,25 @@
 
 <body>
   <div id="id01" class="mc-login">
+    <div class="popup_mc"></div>
     <div class="mc-splash">
       <p>Sign In</p>
     </div>
     <form class="mc-login-form mc-sign mc-sign-oak" name="mc-login-form" action="/assets/scripts/bingo_login.php" method="post">
-      <label for="user">Username:</label>
+      <label for="user">Username</label>
       <div class="mc-sign-input">
         <span class="input-wrapper" style="text-align: right;">></span>
-        <span contenteditable="true" role="textbox" name="user" class="mc-sign-input-text" tabindex="0"></span>
+        <span contenteditable="true" role="textbox" class="mc-sign-input-text" spellcheck="false" name="user"></span>
         <span class="input-wrapper" style="text-align: left;"><</span>
       </div>
-      <label for="pass">Password:</label>
+      <label for="pass">Password</label>
       <div class="mc-sign-input">
         <span class="input-wrapper" style="text-align: right;">></span>
-        <span contenteditable="true" role="textbox" style="-webkit-text-security: disc;" name="user"></span>
+        <span contenteditable="true" role="textbox" style="-webkit-text-security: disc;" spellcheck="false" name="pass"></span>
         <span class="input-wrapper" style="text-align: left;"><</span>
       </div>
     </form>
-    <div class="mc-button-table">
+    <div class="button_mc_container">
       <button type="submit" form="mc-login-form" value="login">Login</button>
       <button type="submit" form="mc-login-form" value="signup">Sign Up</button>
     </div>
