@@ -1,0 +1,27 @@
+.mc-button-table {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.mc-button-table button {
+    flex: 1;
+    background: #9b9b9b url('/assets/img/gui_button.png') center / cover;
+    image-rendering: pixelated;
+    color: #DDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: .28em;
+    height: 2.2em;
+    text-shadow: 2px 2px #373737;
+
+
+
+    &:hover {
+        background: linear-gradient(rgba(110, 140, 255, 0.45), rgba(110, 140, 255, .45)), url('/assets/img/gui_button.png') center / cover;
+		color: #FFFFA0;
+    }
+
+}

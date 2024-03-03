@@ -1,0 +1,35 @@
+.mc-sign{
+    background-image: url('/assets/img/sign_oak.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    aspect-ratio: 2;
+}
+
+.mc-sign-input {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mc-sign .input-wrapper {
+    flex: 1 1 100%;
+}
+
+.mc-sign-input span[contenteditable="true"] {
+    flex: 1 0 10%;
+    outline: transparent;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.mc-sign-input:focus-within > :not([contenteditable="true"]) {
+    animation: blinker 1.2s step-start infinite;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

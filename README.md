@@ -2,4 +2,5 @@
 
 assets for imgs and fonts and stuff
 common for reused elements on multiple pages (headers, sidebars)
-views for per-page
+styles for styles
+no idea where to put js stuff yet

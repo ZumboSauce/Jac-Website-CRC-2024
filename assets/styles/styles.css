@@ -1,0 +1,10 @@
+* {
+    font: 12pt 'minecraftSeven';
+}
+
+
+
+@font-face {
+    font-family: minecraftSeven;
+    src: url("/assets/fonts/Minecraft\ Seven_2.ttf");
+}
