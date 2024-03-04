@@ -4,24 +4,4 @@ like this
 -Avery March 1st 
 
 YIPPEE
-GENERAL:
-TThis year's competition, named Kryptic 2024, will take place at Curé-Antoine-Labelle high school from
-April 11-13th.
-ROBOT:
-The game this year is centred on this year's game piece: dodgeballs. Two teams of two robots compete
-against each other for as many points as possible. These robots are placed on a game field with a hill
-in the middle separating them from interfering with each other. The center of the hill can be accessed
-by both teams and is where the majority of dodgeballs begin the game. Each team gains points by putting
-the dodgeballs into specific areas of the other team's side through whatever means necessary. Each
-team's side has three main structures: a small target, a large target, and multiplier pillars. Teams
-score points with the targets on the opposing team's side, with the small targets closer to reach and
-the large targets further away. 25 points are earned for each ball that exits the top layer of the 
-small target, 50 points are earned for each ball that exits the bottom layer of the small target, and
-250 points are earned for each ball that goes into the large target. On top of this, each team has two
-small and one big pillar on their own side of the game field that multiplies their total score. For
-each tower more a team has a ball on compared to their opponent, they gain an additional +0.5x multiplier
-to their total score. When the 5 total minutes of playtime finish, there is also points given for where
-each dodgeball on the other team's side lies.
-KIOSK:
-VIDEO:
-WEBSITE/PROGRAMMING:
+https://docs.google.com/document/d/1jWDTARiyYFC2zfGI16EGlOYug1N2tvF9k4nOkOaVl_s/edit?usp=sharing
