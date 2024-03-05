@@ -1,14 +1,90 @@
-html{
-    background-color: black;
+html, body {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+
+}
+ww  
+a:active{
+    color: black;
 }
 
-nav{
+a{
+    font-size: 30px;
+}
+body{
+    background-image: url(/assets/img/mclogin.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
+    image-rendering: pixelated;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+@keyframes picswitch {
+    from{background-image: url(/assets/img/chest.png) ;}
+    to{background-image: url(/assets/img/opendoublechest.jpg);}
+    
+
+}
+header{
+    color: white;
+    grid-area: 1/2;
     display: flex;
-    flex-direction: row;
-    background-color: greenyellow;
-
+    font-size: 30px;
+    justify-content: center;
 }
 
-.off {
+
+
+#cheststuff{
+    
+    grid-area: 2 / 2;
+    gap: 10%;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background-image: url(/assets/img/opendoublechest.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     display: none;
+}
+
+ul{
+   
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+    margin-left: 20%;
+}
+
+#chest{
+    display: grid;
+    grid-area: 2/2;
+
+    display: flex;
+    flex: 1 0 240px;
+    background-image: url(/assets/img/chest.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+
 }

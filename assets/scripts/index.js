@@ -1,5 +1,26 @@
 function Appear()
 {
-    document.getElementById("on").classList.remove("off");
-    console.log("Hi!")
+    document.getElementById("chest").style.display="none";
+    document.getElementById("cheststuff").style.animation="picswitch 2s linear";
+    document.getElementById("cheststuff").style.display="flex";
+    
+    if (document.getElementById("cheststuff").style.display=="flex"){
+        document.getElementById("on").style.display="flex";
+    }
+    
+    // console.log("nope")
+
+    // if (document.getElementById("on").style.display == "none")
+    // {
+    //     document.getElementById("on").style.display ="flex";
+    //     console.log("Hi!")
+        
+    // }
+    // else
+    // {
+        
+    //     document.getElementById("on").style.display = "none";
+    //     console.log("hii!!!")
+    // }
 }
+    
