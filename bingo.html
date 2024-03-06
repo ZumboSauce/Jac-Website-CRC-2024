@@ -4,31 +4,72 @@
 <head>
   <link rel="stylesheet" href="/assets/styles/bingo.css">
   <link rel="stylesheet" href="/assets/styles/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/assets/scripts/bingo.js"></script>
+  <script src="/assets/common/popup_mc/popup_mc.js"></script>
 </head>
 
 <body>
-  <div id="id01" class="mc-login">
-    <div class="popup_mc"></div>
-    <div class="mc-splash">
-      <p>Sign In</p>
-    </div>
-    <form class="mc-login-form mc-sign mc-sign-oak" name="mc-login-form" action="/assets/scripts/bingo_login.php" method="post">
-      <label for="user">Username</label>
-      <div class="mc-sign-input">
-        <span class="input-wrapper" style="text-align: right;">></span>
-        <span contenteditable="true" role="textbox" class="mc-sign-input-text" spellcheck="false" name="user"></span>
-        <span class="input-wrapper" style="text-align: left;"><</span>
+  <div id="id01">
+    <div class="popup-mc_container">
+      <div class="tab_container">
+        <button class="login-link">Log In</button>
+        <button class="signup-link">Sign Up</button>
+        <button class="close">D</button>
       </div>
-      <label for="pass">Password</label>
-      <div class="mc-sign-input">
-        <span class="input-wrapper" style="text-align: right;">></span>
-        <span contenteditable="true" role="textbox" style="-webkit-text-security: disc;" spellcheck="false" name="pass"></span>
-        <span class="input-wrapper" style="text-align: left;"><</span>
+      <div class="popup-mc">
+        <div class="bingo-login login-link">
+          <!--FIX RESIZING-->
+          <form class="login-form sign-mc" name="login-form" action="/assets/scripts/bingo_login.php" method="post">
+            <label for="user">Username</label>
+            <div class="sign-mc-input">
+              >
+              <span contenteditable="true" role="textbox" spellcheck="false" name="user"></span>
+              < 
+            </div>
+            <label for="pass">Password</label>
+            <div class="sign-mc-input">
+              >
+              <span contenteditable="true" role="textbox" style="-webkit-text-security: square;" spellcheck="false"
+                name="user"></span>
+              < 
+            </div>
+          </form>
+          <div class="button-mc_container">
+            <button type="submit" form="login-form" value="submit">Submit</button>
+            <button type="submit" form="login-form" value="clear">Clear</button>
+          </div>
+        </div>
+        <div class="bingo-signup signup-link">
+          <!--FIX RESIZING-->
+          <form class="signup-form sign-mc" name="signup-form" action="/assets/scripts/bingo_signup.php" method="post">
+            <label for="user">Username</label>
+            <div class="sign-mc-input">
+              >
+              <span contenteditable="true" role="textbox" spellcheck="false" name="user"></span>
+              < 
+            </div>
+            <label for="pass">Password</label>
+            <div class="sign-mc-input">
+              >
+              <span contenteditable="true" role="textbox" style="-webkit-text-security: square;" spellcheck="false"
+                name="user"></span>
+              < 
+            </div>
+            <label for="pass-con">Confirm Password</label>
+            <div class="sign-mc-input">
+              >
+              <span contenteditable="true" role="textbox" style="-webkit-text-security: square;" spellcheck="false"
+                name="user"></span>
+              < 
+            </div>
+          </form>
+          <div class="button-mc_container">
+            <button type="submit" form="login-form" value="submit">Confirm</button>
+            <button type="submit" form="login-form" value="clear">Clear</button>
+          </div>
+        </div>
       </div>
-    </form>
-    <div class="button_mc_container">
-      <button type="submit" form="mc-login-form" value="login">Login</button>
-      <button type="submit" form="mc-login-form" value="signup">Sign Up</button>
     </div>
   </div>
 </body>

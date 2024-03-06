@@ -1,35 +1,32 @@
-.mc-sign{
+.sign-mc{
     /*ADD SHADOW TO SIGN*/
     background-image: url('/assets/img/sign_oak.webp');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
+    resize: both;
 }
 
-.mc-sign-input {
+.sign-mc-input {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    gap: 10px;
 }
 
-.mc-sign .input-wrapper {
-    flex: 1 1 100%;
-}
-
-.mc-sign-input span[contenteditable="true"] {
-    flex: 1 0 10%;
+.sign-mc-input > span {
+    flex: 0 1 10%;
     outline: transparent;
     text-align: center;
     caret-color: transparent;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: black;
 }
 
-.mc-sign-input:focus-within > :not([contenteditable="true"]) {
+.sign-mc-input:focus-within {
     animation: blinker 1.2s step-start infinite;
 }
 
 @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
+    50% { color: transparent; }
   }

@@ -8,7 +8,7 @@ html {
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b34cc56e-0492-420f-9501-6ac3beb2282c/d7m6vw5-69a8ed98-5964-48f3-8014-564716be5bfb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IzNGNjNTZlLTA0OTItNDIwZi05NTAxLTZhYzNiZWIyMjgyY1wvZDdtNnZ3NS02OWE4ZWQ5OC01OTY0LTQ4ZjMtODAxNC01NjQ3MTZiZTViZmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2L-CQAZfruuZZSUOczRAHJMsVS9kzZQO6Ok4Y4Rjjis');
 }
 
-.mc-login {
+#id01 {
     z-index: 3;
     position: fixed;
     top: 0;
@@ -17,47 +17,71 @@ html {
     bottom: 0;
     height: 100%;
     width: 100%;
-    display: grid;
     background-color: rgba(0, 0, 0, 0.7);
-    grid-template-columns: 1fr .15fr .95fr .15fr 1fr;
-    grid-template-rows: 1fr .3fr 1fr .2fr 2fr;
+    display: grid;
+    grid-template: 1fr 50% 1fr / 1fr 40% 1fr;
+    grid-template-areas:
+        ". . ."
+        ". prompt ."
+        ". . .";
+}
+
+#id01 .popup-mc_container {
+    grid-area: prompt;
+}
+
+#id01 .bingo-login {
+    display: grid;
+    grid-template-columns: 1fr 10% 60% 10% 1fr;
+    grid-template-rows: 10% 3fr 5% 1fr 5%;
     grid-template-areas:
         ". . . . ."
-        ". . splash . ."
         ". . form . ."
-        ". but but but ."
         ". . . . ."
+        ". con con con ."
+        ". . . . .";
+    align-items: center;
 }
 
-.mc-login .mc-splash {
-    grid-area: splash;
-    justify-self: center;
-    align-self: center;
-}
-
-.mc-login .mc-login-form {
+.bingo-login .login-form {
     grid-area: form;
-    justify-self: stretch;
-    align-self: center;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
-    align-content: stretch;
+    resize: both;
+    overflow: auto;
     aspect-ratio: 2;
 }
 
-.mc-login-form input {
-    background-color: transparent;
-    outline: transparent;
-    border: transparent;
-}
-
-.mc-login .button_mc_container {
-    grid-area: but;
+.bingo-login .button-mc_container {
+    grid-area: con;
     gap: 3%;
-    margin: 3%;
 }
 
-.mc-login .popup_mc {
-    grid-area: 2 / 2 / 5 / 5;
+#id01 .bingo-signup {
+    display: none;
+    grid-template-columns: 1fr 10% 60% 10% 1fr;
+    grid-template-rows: 10% 3fr 5% 1fr 5%;
+    grid-template-areas:
+        ". . . . ."
+        ". . form . ."
+        ". . . . ."
+        ". con con con ."
+        ". . . . .";
+    align-items: center;
+}
+
+.bingo-signup .signup-form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    resize: both;
+    overflow: auto;
+    aspect-ratio: 2;
+}
+
+.bingo-signup .button-mc_container {
+    grid-area: con;
+    gap: 3%;
 }

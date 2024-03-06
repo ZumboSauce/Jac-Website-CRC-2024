@@ -1,11 +1,11 @@
-.button_mc_container {
+.button-mc_container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
 }
 
-.button_mc_container button {
+.button-mc_container button {
     flex: 1;
     display: flex;
     justify-content: center;
