@@ -19,7 +19,7 @@ html {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     display: grid;
-    grid-template: 1fr 50% 1fr / 1fr 40% 1fr;
+    grid-template: 1fr 60% 1fr / 1fr 40% 1fr;
     grid-template-areas:
         ". . ."
         ". prompt ."
@@ -30,58 +30,36 @@ html {
     grid-area: prompt;
 }
 
-#id01 .bingo-login {
-    display: grid;
-    grid-template-columns: 1fr 10% 60% 10% 1fr;
-    grid-template-rows: 10% 3fr 5% 1fr 5%;
-    grid-template-areas:
-        ". . . . ."
-        ". . form . ."
-        ". . . . ."
-        ". con con con ."
-        ". . . . .";
-    align-items: center;
-}
-
-.bingo-login .login-form {
-    grid-area: form;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    resize: both;
-    overflow: auto;
-    aspect-ratio: 2;
-}
-
-.bingo-login .button-mc_container {
-    grid-area: con;
-    gap: 3%;
-}
-
-#id01 .bingo-signup {
+#id01 .popup-mc > * {
     display: none;
     grid-template-columns: 1fr 10% 60% 10% 1fr;
-    grid-template-rows: 10% 3fr 5% 1fr 5%;
+    grid-template-rows: 10% 5% 3fr 5% 1fr 5%;
     grid-template-areas:
         ". . . . ."
+        ". . form-info . ."
         ". . form . ."
         ". . . . ."
         ". con con con ."
         ". . . . .";
     align-items: center;
-}
 
-.bingo-signup .signup-form {
-    grid-area: form;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    resize: both;
-    overflow: auto;
-    aspect-ratio: 2;
-}
+    & label {
+        text-align: center;
+        grid-area: form-info
+    }
 
-.bingo-signup .button-mc_container {
-    grid-area: con;
-    gap: 3%;
+    & form {
+        grid-area: form;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        resize: both;
+        overflow: auto;
+        aspect-ratio: 2;
+    }
+
+    & .button-mc_container {
+        grid-area: con;
+        gap: 3%;
+    }
 }
