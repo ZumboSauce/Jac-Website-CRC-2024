@@ -1,15 +1,14 @@
 @import url('/assets/common/button_mc/styles.css');
 @import url('/assets/common/sign_mc/styles.css');
 @import url('/assets/common/popup_mc/styles.css');
-
+@import url('/assets/common/bingo_card/styles.css');
 
 html {
-    z-index: 1;
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b34cc56e-0492-420f-9501-6ac3beb2282c/d7m6vw5-69a8ed98-5964-48f3-8014-564716be5bfb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IzNGNjNTZlLTA0OTItNDIwZi05NTAxLTZhYzNiZWIyMjgyY1wvZDdtNnZ3NS02OWE4ZWQ5OC01OTY0LTQ4ZjMtODAxNC01NjQ3MTZiZTViZmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2L-CQAZfruuZZSUOczRAHJMsVS9kzZQO6Ok4Y4Rjjis');
 }
 
 #id01 {
-    z-index: 3;
+    z-index: 999;
     position: fixed;
     top: 0;
     left: 0;
@@ -62,4 +61,46 @@ html {
         grid-area: con;
         gap: 3%;
     }
+}
+
+#id02 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1% 1fr 1% 18% 1%;
+    grid-template-rows: 12% 2% 17% 3% 1fr 3%;
+    grid-template-areas: 
+    "nav nav nav nav nav"
+    ". . . . ."
+    ". bm . chat ."
+    ". . . chat ."
+    ". cds . chat ."
+    ". . . . .";
+}
+
+#id02 #navbar {
+    grid-area: nav;
+}
+
+#id02 #bingo-machine {
+    grid-area: bm;
+}
+
+#id02 .popup-mc_container {
+    grid-area: cds;
+    grid-template-rows: 1fr;
+}
+
+#id02 .bingo-card_container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#id02 #bingo-chat {
+    grid-area: chat;
 }

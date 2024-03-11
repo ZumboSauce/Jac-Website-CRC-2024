@@ -1,4 +1,6 @@
 <?php
+
+    //TODO ADD ERROR HANDLING
     session_start();
     include $_SERVER['DOCUMENT_ROOT'] . '.config/config.php';
 

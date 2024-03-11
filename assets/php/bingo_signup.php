@@ -4,7 +4,7 @@
 
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
-
+    //TODO ADD ERROR HANDLING
     if (strlen($_POST["user"]) > NAME_LENGTH_MAX){ die("NAMELENERR"); }
     else if ( !ctype_alnum( $_POST["user"] )) { die("NAMEILLEGALCHARERR"); }
     else if ($_POST["pass"] != $_POST["pass-con"]) { die("PASSMATCHERR"); }
