@@ -27,7 +27,7 @@ $('#login-form').on('submit', function (e) {
     $.ajax({
         type: 'post',
         url: '/assets/php/bingo_login.php',
-        data: $(this).serialize(),
+        data: span_input_fetch($(this)),
         success: function () {
             alert('thang');
         }

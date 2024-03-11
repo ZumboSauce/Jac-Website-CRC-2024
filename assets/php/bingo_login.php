@@ -1,14 +1,24 @@
 <?php
+    session_start();
+    include $_SERVER['DOCUMENT_ROOT'] . '.config/config.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+    $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DB);
 
-include $_SERVER['DOCUMENT_ROOT'] . '.config/config.php';
+    if($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-$conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DB);
-
-if($conn->connect_error) {
-    echo "fail";
-    die("Connection failed: " . $conn->connect_error);
-}
-
+    $pass = "";
+    $id = null;
+    $login_sql = "SELECT pass, id FROM user WHERE name = ?";
+    $login_stmt = $conn->prepare($login_sql);
+    $login_stmt->bind_param("s", $_POST["user"]);
+    $login_stmt->execute();
+    $login_stmt->bind_result($pass, $id);
+    $login_stmt->fetch();
+    $login_stmt->close();
+    if(password_verify($_POST["pass"], $pass)) {
+        $_SESSION['user_id'] = $id;
+    } else {
+        die("CREDERR");
+    }
