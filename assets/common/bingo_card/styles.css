@@ -21,16 +21,22 @@
     grid-auto-flow: row;
 }
 
-.bingo-spot_wrapper {
+.bingo-spot {
     background: #8b8b8b;
     box-shadow: inset 2px 2px #373737, inset -2px -2px #ffffff;
+    box-sizing: border-box;
     padding: 2px;
     display: grid;
-    grid-template: 1fr 1fr;
-}
-
-.bingo-spot {
-    &:hover {
-        filter: brightness(2) opacity(45%);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    & > img {
+        width: 100%;
+        image-rendering: pixelated;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    &:hover::before {
+        content: "";
+        backdrop-filter: brightness(2) opacity(.5);
+        grid-area: 1 / 1 / 2 / 2;
     }
 }

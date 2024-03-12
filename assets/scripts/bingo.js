@@ -52,7 +52,7 @@ for(let i = 0; i < 6; i++){
 
 $(".bingo-card").each(function() {
     for(let i = 0; i < 27; i++){
-        $(this).append('<div class="bingo-spot_wrapper"><div class="bingo-spot"></div></div>');
+        $(this).append('<div class="bingo-spot"></div>');
     }
 });
 
