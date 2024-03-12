@@ -17,7 +17,7 @@ html {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    display: grid;
+    display: none;
     grid-template: 1fr 60% 1fr / 1fr 40% 1fr;
     grid-template-areas:
         ". . ."
@@ -72,9 +72,9 @@ html {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1% 1fr 1% 18% 1%;
+    grid-template-columns: 1fr 58% 1fr 25% 1fr;
     grid-template-rows: 12% 2% 17% 3% 1fr 3%;
-    grid-template-areas: 
+    grid-template-areas:
     "nav nav nav nav nav"
     ". . . . ."
     ". bm . chat ."
@@ -91,16 +91,12 @@ html {
     grid-area: bm;
 }
 
-#id02 .popup-mc_container {
+#id02 #bingo-cards {
     grid-area: cds;
     grid-template-rows: 1fr;
 }
 
-#id02 .bingo-card_container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
-
 #id02 #bingo-chat {
     grid-area: chat;
+    grid-template-rows: 1fr;
 }

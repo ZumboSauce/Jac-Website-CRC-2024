@@ -47,12 +47,12 @@ $('#signup-form').on('submit', function (e) {
 });
 
 for(let i = 0; i < 6; i++){
-    $('#id02 .bingo-card_container').append('<div class="bingo-card_wrapper"><div class="bingo-card"></div></div>');
+    $('#id02 .bingo-card_container').append('<div class=bingo-card_wrapper><div class="bingo-card"></div></div>');
 }
 
 $(".bingo-card").each(function() {
     for(let i = 0; i < 27; i++){
-        $(this).append('<div class="bingo-spot"></div>');
+        $(this).append('<div class="bingo-spot_wrapper"><div class="bingo-spot"></div></div>');
     }
 });
 

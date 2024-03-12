@@ -1,25 +1,36 @@
 .bingo-card_container {
-    display: grid;
-    grid-auto-flow: row;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
-.bingo-card_container .bingo-card_wrapper {
+.bingo-card_wrapper {
+    flex: 1 1 50%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
 .bingo-card_container .bingo-card {
-    flex: 1 0;
-    padding: 1%;
+    aspect-ratio: 3;
+    flex: 1;
+    padding: 3%;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: row;
-    aspect-ratio: 3;
+}
+
+.bingo-spot_wrapper {
+    background: #8b8b8b;
+    box-shadow: inset 2px 2px #373737, inset -2px -2px #ffffff;
+    padding: 2px;
+    display: grid;
+    grid-template: 1fr 1fr;
 }
 
 .bingo-spot {
-    background-color: #8b8b8b;
-    box-shadow: inset 2px 2px #373737, inset -2px -2px #ffffff;
+    &:hover {
+        filter: brightness(2) opacity(45%);
+    }
 }
