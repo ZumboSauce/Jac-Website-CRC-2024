@@ -1,0 +1,65 @@
+html,body{
+    height: fit-content;
+    width: fit-content;
+}
+body{
+    background-image: url(/assets/img/netherrackBackground.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{
+    font-size: 70px;
+    color: white;
+}
+body{
+
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas:
+     "header header"
+     "main sidebar"
+    "main ."
+}
+#main{
+    grid-area: main;
+    background-color: white;
+}
+
+
+.image,.text{
+    margin-left: 10%;
+}
+
+.image{
+    max-height: 50%;
+    max-width: 50%;
+    margin-top: 1%;
+    scale: 90%;
+    margin-left: 10%;
+}
+#sideImgs{
+    display: flex;
+    grid-area: sidebar;
+    /* background-color: red; */
+    list-style-type: none;
+    
+}
+#imgs{
+    list-style-type: none;
+    margin-right: 10%;
+}
+#imgs li img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+#top{
+    grid-area: header;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+}
+
