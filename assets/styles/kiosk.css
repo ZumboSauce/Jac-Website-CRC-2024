@@ -1,48 +1,61 @@
+@import url(/assets/common/popup_mc/styles.css);
+
 html,body{
+
     height: fit-content;
     width: fit-content;
 }
 body{
-    background-image: url(/assets/img/netherrackBackground.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(/assets/img/netherbrick.jpg);
+    background-repeat:repeat;
+    background-size: contain;
 }
+
 h2{
     font-size: 70px;
     color: white;
 }
 body{
-
     display: grid;
     grid-template-columns: 2fr 0.5fr;
     grid-template-rows: 0.1fr 1fr;
-    grid-template-areas:
-     "header header"
-     "main sidebar"
-    "main ."
+    grid-template-areas: "header header" "main sidebar" "main ."
 }
 #main{
     grid-area: main;
-    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    /* background-color: white; */
+    align-items: stretch;
 }
 
 
-.image,.text{
+.image, .text{
     margin-left: 10%;
+    background-color: #c6c6c6;
+    border-radius: 6px;
+    box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
+    grid-auto-flow: column;
+    border: black solid 2px;
 }
 
 .image{
-    max-height: 50%;
-    max-width: 50%;
+    max-height: 400px;
+    min-height: 300px;
+    max-width: 75%;
     margin-top: 1%;
     scale: 90%;
-    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    object-fit: cover;
 }
 #sideImgs{
     display: flex;
     grid-area: sidebar;
     /* background-color: red; */
     list-style-type: none;
+    
     
 }
 #imgs{
@@ -53,6 +66,12 @@ body{
     height: 100%;
     width: 100%;
     margin-bottom: 3%;
+    min-width: 50%;
+    background-color: #c6c6c6;
+    border-radius: 6px;
+    box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
+    grid-auto-flow: column;
+    border: black solid 2px;
 }
 
 #top{
@@ -62,4 +81,7 @@ body{
     justify-content: center;
     gap: 7%;
 }
-
+.text{
+    margin-right: 10%;
+    padding-left: 1%;
+}
