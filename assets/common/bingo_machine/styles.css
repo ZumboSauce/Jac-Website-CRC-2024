@@ -1,0 +1,43 @@
+.bingo-machine_wrapper {
+    display: grid;
+    grid-template: "c" 1fr / 1fr;
+}
+
+.bingo-machine_overlay {
+    grid-area: c;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(var(--slots), 1fr);
+    align-items: stretch;
+
+    :first-child {
+        z-index: 1;
+        background-color: red;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    :last-child {
+        z-index: 1;
+        background-color: red;
+        grid-area: 1 / -1 / 2 / -2;
+    }
+}
+
+.bingo-machine {
+    grid-area: c;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.bingo-machine .bingo-roll{
+    flex: 0;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    & > img {
+        margin: 37%;
+        object-fit: contain;
+        image-rendering: pixelated;
+    }
+}
