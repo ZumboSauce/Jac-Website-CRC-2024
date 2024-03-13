@@ -60,4 +60,13 @@ for(let i = 0; i < 7; i++) {
     $("#bingo-machine .bingo-machine").append(`<div class="bingo-roll" style="flex: 1"><img src="/assets/img/cake.png"></div>`);
 }
 
-$("#id01 tab_container button[name='bingo-login']").click();
+$("#id01 tab_container button[name='bingo-login']").trigger("click");
+
+async function test(){
+    while(true) {
+        await new Promise(r => setTimeout(r, 4000));
+        $("#bingo-machine .bingo-machine").trigger("bingo-machine:call");
+    }
+}
+
+test();
