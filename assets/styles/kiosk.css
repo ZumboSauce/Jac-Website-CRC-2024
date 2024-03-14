@@ -5,12 +5,16 @@ html,body{
     height: fit-content;
     width: fit-content;
 }
-body{
+#kiosk{
     background-image: url(/assets/img/netherbrick.jpg);
     background-repeat:repeat;
     background-size: contain;
 }
-
+#robot{
+    background-image: url(/assets/img/placeholder1.jpg);
+    background-repeat:repeat;
+    background-size: contain;
+}
 h2{
     font-size: 70px;
     color: white;
@@ -69,7 +73,7 @@ body{
     min-width: 50%;
     background-color: #c6c6c6;
     border-radius: 6px;
-    box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
+    box-shadow: inset 4px 4px #fbfbfb, inset -9px -9px #545454;
     grid-auto-flow: column;
     border: black solid 2px;
 }
@@ -80,8 +84,15 @@ body{
     display: flex;
     justify-content: center;
     gap: 7%;
+    
 }
 .text{
     margin-right: 10%;
     padding-left: 1%;
+}
+#top #back{
+    display: flex;
+    /* margin-right: -50%; */
+    position: relative;
+    left: 1px;
 }
