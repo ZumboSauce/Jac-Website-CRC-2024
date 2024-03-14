@@ -23,7 +23,7 @@ body{
     display: grid;
     grid-template-columns: 2fr 0.5fr;
     grid-template-rows: 0.1fr 1fr;
-    grid-template-areas: "header header" "main sidebar" "main ."
+    grid-template-areas: "header ." "main sidebar" "main .";
 }
 #main{
     grid-area: main;
@@ -90,9 +90,22 @@ body{
     margin-right: 10%;
     padding-left: 1%;
 }
-#top #back{
+a{
     display: flex;
-    /* margin-right: -50%; */
-    position: relative;
-    left: 1px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    height: fit-content;
+
+}
+
+a:hover{
+    color: #545454;
+}
+
+#fr{
+    margin-left: auto;
+}
+#back{
+    margin-right: auto;
 }
