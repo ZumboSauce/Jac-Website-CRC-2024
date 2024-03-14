@@ -57,7 +57,7 @@ $(".bingo-card").each(function() {
 });
 
 for(let i = 0; i < 7; i++) {
-    $("#bingo-machine .bingo-machine").append(`<div class="bingo-roll" style="flex: 1"><img src="/assets/img/cake.png"></div>`);
+    $("#bingo-machine .bingo-machine").append(`<div class="bingo-roll" style="flex-grow: 1"><div></div></div>`);
 }
 
 $("#id01 tab_container button[name='bingo-login']").trigger("click");

@@ -1,0 +1,439 @@
+{
+    "Cake": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/53/Cake_JE4.png/revision/latest/scale-to-width-down/64?cb=20200518185831",
+        "idx": 0
+    },
+    "Steak": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/04/Steak_JE4_BE3.png/revision/latest/scale-to-width-down/64?cb=20190504055306",
+        "idx": 1
+    },
+    "Bread": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/44/Bread_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20190503044317",
+        "idx": 2
+    },
+    "Golden_Carrot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/aa/Golden_Carrot_JE4_BE2.png/revision/latest/scale-to-width-down/64?cb=20200430031437",
+        "idx": 3
+    },
+    "Raw_Porkchop": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e0/Raw_Porkchop_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20190504060623",
+        "idx": 4
+    },
+    "Apple": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/af/Apple_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20200519264834",
+        "idx": 5
+    },
+    "Rotten_Flesh": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ac/Rotten_Flesh_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190521031955",
+        "idx": 6
+    },
+    "Pumpkin_Pie": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ac/Pumpkin_Pie_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190512213136",
+        "idx": 7
+    },
+    "Mushroom_Stew": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e0/Mushroom_Stew_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190505052018",
+        "idx": 8
+    },
+    "Raw_Mutton": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f3/Raw_Mutton_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190504055753",
+        "idx": 9
+    },
+    "Oak_Sign": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/82/Oak_Sign_JE3.png/revision/latest/scale-to-width-down/64?cb=20211013161856",
+        "idx": 10
+    },
+    "Spruce_Trapdoor": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c9/Spruce_Trapdoor_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20201206122955",
+        "idx": 11
+    },
+    "Birch_Log": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/db/Birch_Log_%28UD%29_JE5_BE3.png/revision/latest/scale-to-width-down/64?cb=20191220085658",
+        "idx": 12
+    },
+    "Acacia_Stair": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8c/Acacia_Stairs.png/revision/latest/scale-to-width-down/64?cb=20220112085727",
+        "idx": 13
+    },
+    "Dark_Oak_Door": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Dark_Oak_Door_JE4.png/revision/latest/scale-to-width-down/64?cb=20220317054745",
+        "idx": 14
+    },
+    "Jungle_Slab": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/37/Jungle_Slab_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20201126034841",
+        "idx": 15
+    },
+    "Mangrove_Stair": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Mangrove_Stairs_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20220316183557",
+        "idx": 16
+    },
+    "Crimson_Fence_Gate": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5e/Mangrove_Fence_Gate_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20220317044024",
+        "idx": 17
+    },
+    "Warped_Stem": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/9e/Warped_Stem_%28UD%29_BE1.gif/revision/latest/scale-to-width-down/64?cb=20200319213122",
+        "frames": "",
+        "idx": 18
+    },
+    "Cherry_Plank": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Cherry_Planks_JE1.png/revision/latest/scale-to-width-down/64?cb=20230216051020",
+        "idx": 19
+    },
+    "Wheat": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Wheat_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190521034264",
+        "idx": 20
+    },
+    "Beetroot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/12/Beetroot_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190503043121",
+        "idx": 21
+    },
+    "Carrot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/4e/Carrot_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20200510235333",
+        "idx": 22
+    },
+    "Potato": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Potato_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190430222727",
+        "idx": 23
+    },
+    "Melon_Slice": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f2/Melon_Slice_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190505051737",
+        "idx": 24
+    },
+    "Chorus_Fruit": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/33/Chorus_Fruit_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190505051041",
+        "idx": 25
+    },
+    "Sugar_Cane": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Sugar_Cane_%28item%29_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20210317220330",
+        "idx": 26
+    },
+    "Nether_Wart": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3f/Nether_Wart_%28item%29_JE2_BE1.png/revision/latest/scale-to-width-down/64?cb=20190908024827",
+        "idx": 27
+    },
+    "Bamboo": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c8/Bamboo_%28item%29_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20200525024738",
+        "idx": 28
+    },
+    "Kelp": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/09/Kelp_%28item%29_JE1_BE2.png/revision/latest/scale-to-width-down/64?cb=20190403190705",
+        "idx": 29
+    },
+    "Sword": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.14.4/assets/minecraft/textures/item/${}_sword.png",
+        "var": {
+            "wooden": "",
+            "stone": "",
+            "iron": "",
+            "golden": "",
+            "diamond": ""
+        },
+        "idx": 30
+    },
+    "Pickaxe": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.14.4/assets/minecraft/textures/item/${}_pickaxe.png",
+        "var": {
+            "wooden": "",
+            "stone": "",
+            "iron": "",
+            "golden": "",
+            "diamond": ""
+        },
+        "idx": 35
+    },
+    "Shovel": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.14.4/assets/minecraft/textures/item/${}_shovel.png",
+        "var": {
+            "wooden": "",
+            "stone": "",
+            "iron": "",
+            "golden": "",
+            "diamond": ""
+        },
+        "idx": 40
+    },
+    "Hoe": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.14.4/assets/minecraft/textures/item/${}_hoe.png",
+        "var": {
+            "wooden": "",
+            "stone": "",
+            "iron": "",
+            "golden": "",
+            "diamond": ""
+        },
+        "idx": 45
+    },
+    "Axe": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.14.4/assets/minecraft/textures/item/${}_axe.png",
+        "var": {
+            "wooden": "",
+            "stone": "",
+            "iron": "",
+            "golden": "",
+            "diamond": ""
+        },
+        "idx": 50
+    },
+    "Flint_and_Steel": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/94/Flint_and_Steel_JE4_BE2.png/revision/latest/scale-to-width-down/64?cb=20200127082924",
+        "idx": 55
+    },
+    "Bucket": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Bucket_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200510234539",
+        "idx": 56
+    },
+    "Spyglass": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/6f/Spyglass_%28item%29_JE3_BE1.png/revision/latest/scale-to-width-down/64?cb=20210310162651",
+        "idx": 57
+    },
+    "Elytra": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/6f/Elytra_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20230930213939",
+        "idx": 58
+    },
+    "Bow": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Bow_JE2_BE1.png/revision/latest/scale-to-width-down/64?cb=20200128015144",
+        "idx": 59
+    },
+    "Cobblestone": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone.png/revision/latest/scale-to-width-down/64?cb=20220112085635",
+        "idx": 60
+    },
+    "Nether_Bricks": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Nether_Bricks_JE3_BE4.png/revision/latest/scale-to-width-down/64?cb=20191230024517",
+        "idx": 61
+    },
+    "Stone_Bricks": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5a/Stone_Bricks_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20200315184454",
+        "idx": 62
+    },
+    "Sandstone": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/95/Sandstone_JE6_BE3.png/revision/latest/scale-to-width-down/64?cb=20200317204927",
+        "idx": 63
+    },
+    "Red_Sandstone": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/47/Red_Sandstone_JE4_BE2.png/revision/latest/scale-to-width-down/64?cb=20200317202440",
+        "idx": 64
+    },
+    "Mossy_Cobblestone": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/12/Mossy_Cobblestone_JE4_BE2.png/revision/latest/scale-to-width-down/64?cb=20200317185824",
+        "idx": 65
+    },
+    "Dark_Prismarine": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/79/Dark_Prismarine_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200307235559",
+        "idx": 66
+    },
+    "Purpur_Block": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Purpur_Block_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200302214854",
+        "idx": 67
+    },
+    "Bricks": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/62/Bricks_JE5_BE3.png/revision/latest/scale-to-width-down/64?cb=20200226015249",
+        "idx": 68
+    },
+    "Spider_Eye": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/1a/Spider_Eye_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190521064215",
+        "idx": 69
+    },
+    "Glowstone_Dust": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/25/Glowstone_Dust_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190430044519",
+        "idx": 70
+    },
+    "Gunpowder": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/40/Gunpowder_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190816222615",
+        "idx": 71
+    },
+    "Glistering_Melon_Slice": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e7/Glistering_Melon_Slice_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190531064839",
+        "idx": 72
+    },
+    "Magma_Cream": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/08/Magma_Cream_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190501035730",
+        "idx": 73
+    },
+    "Water_Bottle": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Water_Bottle_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191027055423",
+        "idx": 74
+    },
+    "Blaze_Rod": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/87/Blaze_Rod_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20190403171209",
+        "idx": 75
+    },
+    "Ghast_Tear": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c5/Ghast_Tear_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190501043739",
+        "idx": 76
+    },
+    "Rabbit's_Foot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/Rabbit%27s_Foot_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20190501034244",
+        "idx": 77
+    },
+    "Sugar": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Sugar_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190531031745",
+        "idx": 78
+    },
+    "Diamond": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ab/Diamond_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20230924193138",
+        "idx": 79
+    },
+    "Iron_Ingot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20230613175240",
+        "idx": 80
+    },
+    "Coal": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Coal_JE4_BE3.png/revision/latest/scale-to-width-down/64?cb=20230625214010",
+        "idx": 81
+    },
+    "Gold_Ingot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8a/Gold_Ingot_JE4_BE2.png/revision/latest/scale-to-width-down/64?cb=20200224211607",
+        "idx": 82
+    },
+    "Copper_Ingot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/91/Copper_Ingot_JE2_BE1.png/revision/latest/scale-to-width-down/64?cb=20201111183617",
+        "idx": 83
+    },
+    "Lapis_Lazuli": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/43/Lapis_Lazuli_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20190430045315",
+        "idx": 84
+    },
+    "Emerald": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png/revision/latest/scale-to-width-down/64?cb=20191229174220",
+        "idx": 85
+    },
+    "Netherite_Ingot": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Netherite_Ingot_JE1_BE2.png/revision/latest/scale-to-width-down/64?cb=20220318055311",
+        "idx": 86
+    },
+    "Nether_Quartz": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/64/Nether_Quartz_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191230024333",
+        "idx": 87
+    },
+    "Amethyst_Shard": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/61/Amethyst_Shard_JE2_BE1.png/revision/latest/scale-to-width-down/64?cb=20201111173100",
+        "idx": 88
+    },
+    "Redstone_Repeater": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f0/Redstone_Repeater_%28S%29_JE5_BE2.png/revision/latest/scale-to-width-down/64?cb=20230108120812",
+        "idx": 89
+    },
+    "Daylight_Detector": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e6/Daylight_Detector_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20201207025114",
+        "idx": 90
+    },
+    "Redstone_Lamp": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/30/Redstone_Lamp_JE3_BE2.png/revision/latest/scale-to-width-down/64?cb=20180413085535",
+        "idx": 91
+    },
+    "Hopper": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e2/Hopper_%28D%29_JE8.png/revision/latest/scale-to-width-down/64?cb=20211129111940",
+        "idx": 92
+    },
+    "Observer": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/39/Observer_JE4_BE3.png/revision/latest/scale-to-width-down/64?cb=20200317192711",
+        "idx": 93
+    },
+    "Piston": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ee/Piston_%28U%29_JE4.png/revision/latest/scale-to-width-down/64?cb=20220610085015",
+        "idx": 94
+    },
+    "Sticky_Piston": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0e/Sticky_Piston_%28U%29_JE4.png/revision/latest/scale-to-width-down/64?cb=20220610085030",
+        "idx": 95
+    },
+    "Dispenser": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/64/Dispenser_%28S%29_JE4.png/revision/latest/scale-to-width-down/64?cb=20210111083647",
+        "idx": 96
+    },
+    "Target": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f4/Target_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20200302214440",
+        "idx": 97
+    },
+    "Block_of_Redstone": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Block_of_Redstone_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191230030530",
+        "idx": 98
+    },
+    "Crafting_Table": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Crafting_Table_JE4_BE3.png/revision/latest/scale-to-width-down/64?cb=20191229083528",
+        "idx": 99
+    },
+    "Furnace": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/99/Furnace_%28S%29_JE4.png/revision/latest/scale-to-width-down/64?cb=20210111066464",
+        "idx": 100
+    },
+    "Chest": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3d/Chest_%28S%29_JE1.png/revision/latest/scale-to-width-down/64?cb=20200128020353",
+        "idx": 101
+    },
+    "Enchanting_Table": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8d/Enchanting_Table_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20190714064704",
+        "idx": 102
+    },
+    "Anvil": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3b/Anvil_%28N%29_JE3.png/revision/latest/scale-to-width-down/64?cb=20201126085258",
+        "idx": 103
+    },
+    "Composter": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/1d/Composter_JE1.png/revision/latest/scale-to-width-down/64?cb=20200307264158",
+        "idx": 104
+    },
+    "Jukebox": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ee/Jukebox_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20201202075007",
+        "idx": 105
+    },
+    "Stonecutter": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/81/Stonecutter_JE2_BE1.png/revision/latest/scale-to-width-down/64?cb=20200317210153",
+        "idx": 106
+    },
+    "Cauldron": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c9/Cauldron_JE7.png/revision/latest/scale-to-width-down/64?cb=20220112083115",
+        "idx": 107
+    },
+    "Red_Bed": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/6a/Red_Bed_%28N%29.png/revision/latest/scale-to-width-down/64?cb=20220105083642",
+        "idx": 108
+    },
+    "Lead": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/1f/Lead_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191229205413",
+        "idx": 109
+    },
+    "Firework_Rocket": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fd/Firework_Rocket_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200518190017",
+        "idx": 110
+    },
+    "Compass": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/97/Compass_JE2_BE2.gif/revision/latest/scale-to-width-down/64?cb=20230319212845",
+        "frames": "",
+        "idx": 111
+    },
+    "Carrot_on_a_Stick": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/12/Carrot_on_a_Stick_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191012181339",
+        "idx": 112
+    },
+    "Music_Disc": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/aa/Music_Disc_13_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20200130150458",
+        "idx": 113
+    },
+    "Name_Tag": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/05/Name_Tag_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20191229205433",
+        "idx": 114
+    },
+    "Enchanted_Golden_Apple": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/54/Golden_Apple_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200521041809",
+        "idx": 115
+    },
+    "Saddle": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Saddle_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20191229204636",
+        "idx": 116
+    },
+    "Fishing_Rod": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7f/Fishing_Rod_JE2_BE2.png/revision/latest/scale-to-width-down/64?cb=20200201063839",
+        "idx": 117
+    },
+    "Enchanted_Book": {
+        "url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d7/Enchanted_Book_JE1_BE1.png/revision/latest/scale-to-width-down/64?cb=20190910062812",
+        "idx": 118
+    },
+    "Enchanted_Item_Glint": {
+        "url": "https://raw.githubusercontent.com/inventivetalentdev/minecraft-assets/1.12.2/assets/minecraft/textures/misc/enchanted_item_glint.png",
+        "idx": 119
+    }
+}

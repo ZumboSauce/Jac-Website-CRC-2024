@@ -32,12 +32,27 @@
 .bingo-machine .bingo-roll{
     flex: 0;
     overflow: hidden;
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template: "c" 1fr / 1fr;
+    align-items: center;
     justify-content: center;
     & > img {
-        margin: 37%;
+        justify-self: center;
+        grid-area: c;
+        max-width: 25%;
+        max-height: 25%;
         object-fit: contain;
         image-rendering: pixelated;
+        animation: bobbing 3.5s ease-in-out infinite;
+    }
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translateY(0px);
+    } 50% {
+        transform: translateY(10px);
+    } 100% {
+        transform: translateY(0);
     }
 }
