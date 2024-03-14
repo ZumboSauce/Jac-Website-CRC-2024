@@ -31,7 +31,7 @@ h2{
 #title {
     
     color: white;
-    grid-area: header;
+    grid-area: 1/2;
     display: flex;
     font-size: 30px;
     justify-content: center;
@@ -41,7 +41,7 @@ h2{
 
 #cheststuff{
     
-    grid-area: 1/2;
+    grid-area: 2/2;
     gap: 10%;
     padding: 10px;
     display: flex;
