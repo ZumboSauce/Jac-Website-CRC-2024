@@ -4,12 +4,21 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
 #kiosk{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: "header header" "main sidebar" "main ." " . language";
     background-image: url(/assets/img/netherbrick.jpg);
     background-repeat:repeat;
     background-size: contain;
 }
 #robot{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: "header header" "main sidebar" "main ." " . language";
     background-image: url(/assets/img/ironBlockPiston.jpg);
     image-rendering: pixelated;
     background-repeat:repeat;
@@ -20,7 +29,12 @@ html,body{
     background-repeat:repeat;
 
 }
-
+#video{
+    margin-top: -20%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 #fr{
     display: grid;
     grid-area: 1/3;
@@ -35,11 +49,9 @@ h2{
     font-size: 70px;
     color: black;
 }
-body{
-    display: grid;
-    grid-template-columns: 2fr 0.5fr;
-    grid-template-rows: 0.1fr 1fr;
-    grid-template-areas: "header header" "main sidebar" "main ." " . language";
+#video{
+    display: flex;
+    align-content: center;
 }
 #main{
     grid-area: main;
@@ -63,9 +75,8 @@ body{
     justify-content: space-between;
     max-height: 1%;
 }
-#flip{
+.flip{
     transform:scaleX(-1);
-
 }
 
 .lantern:hover{
