@@ -1,4 +1,68 @@
-html, body {
+#indexLinks{
+    display: flex;
+    justify-content: space-between;
+    background-color: #3e453b;
+    align-items: center;
+    height: 200px;
+}
+#logo {
+   scale: 50%;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+a:hover{
+    color: rgb(20, 165, 20);
+}
+body{
+    background-image: url(/assets/img/tempMcWorld.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#language{
+    color: black;
+    position: relative;
+    left: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* html, body {
     height: 100%;
     width: 100%;
 
@@ -90,4 +154,4 @@ button{
 
 #video{
     grid-area: 2/2;
-}
+} */
