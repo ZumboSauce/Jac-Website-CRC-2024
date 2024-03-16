@@ -6,10 +6,15 @@
     <title>Kiosk</title>
     <link rel="stylesheet" href="/assets/styles/kiosk.css">
     <link rel="stylesheet" href="/assets/styles/styles.css">
+    <script src="/assets/scripts/index.js"></script>
 </head>
 <body id="kiosk">
     <nav id="links">
-        <a id="back" href="/index.html">Home</a>
+        <a href="/index.html">Home</a>
+        <a href="/video.html">Video</a>
+        <a href="/tutorial.html">Tutorial</a>
+        <a href="bingo.html">Bingo</a>
+        <a href="/ourCrew.html">Our Crew</a>
         <a id="fr" href="/kioskFR.html">Francais</a>
     </nav>
     <nav id="top">
@@ -22,7 +27,16 @@
         <img src="/assets/img/SoulLantern.webp" style="display: none;">
     </nav>
     <section id="main">
-        <img class="image" class="teamimage" src="">
+        <div class="slideshow-container">
+            
+            <img class="mySlides image" src="/assets/img/stairs.jpg">
+            <img class="mySlides image" src="/assets/img/WallSlay3.jpg">
+            <img class="mySlides image" src="/assets/img/painitng.jpg">
+
+            <button class="text prev" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="text next" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
         <p class="text" class="brainstorm">
             Like all major construction, the kiosk building started with a brainstorming phase. 
             With a theme as expansive as Minecraft is, there were many things that were thought 
@@ -49,7 +63,7 @@
             and beginning of painting the individual pixels of the wall.
 
         </p>
-        <img class="image" class="painting" src=""/>
+        <img class="image" class="painting" src="/assets/img/grouppainting.JPG"/>
         <p class="text" class="howFixed">
             From the beginning of the winter semester to the end of March break,
             most of the work done on the kiosk continued to be the painting of 
@@ -62,12 +76,32 @@
         </p>
     </section>
     <section id="sideImgs">
-        <img class="aside" src="./assets/img/WallSlay2.jpg">
+        <img class="aside" src="./assets/img/kioskgroup/WallSlay2.jpg">
         <img class="aside" src="./assets/img/SofiaSelfie1.jpg">
         <img class="aside" src="./assets/img/SofiaSelfie2.jpg">
         <img class="aside" src="./assets/img/JeffSaw.jpg">
         <img class="aside" src="./assets/img/jeffBaby.JPG">
         <img class="aside" src="./assets/img/KioskPose.JPG">
     </section>
+
+    <script>
+        var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
 </body>
 </html>
