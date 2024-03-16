@@ -62,11 +62,8 @@ for(let i = 0; i < 7; i++) {
 
 $("#id01 tab_container button[name='bingo-login']").trigger("click");
 
-async function test(){
-    while(true) {
-        await new Promise(r => setTimeout(r, 4000));
-        $("#bingo-machine .bingo-machine").trigger("bingo-machine:call");
-    }
-}
+const bingosrv = new EventSource("/assets/php/bingo_sse.php");
 
-test();
+bingosrv.addEventListener("call", function(event) {
+    $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", [JSON.parse(event.data).call]);
+});
