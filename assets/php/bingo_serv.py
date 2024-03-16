@@ -1,38 +1,51 @@
 import asyncio
+import random
+import os
 
-async def create_bingo_server(call_interval: int):
-    srv = BingoServer(call_interval)
-    await srv._init()
-    return srv
 
-class BingoServer:
+class BingoClientProtocol(asyncio.Protocol):
+    clients: set[asyncio.Transport] = set()
+
+    def connection_made(self, transport):
+        print('Connection')
+        BingoClientProtocol.clients.add(transport)
+        self.transport = transport
+
+    def connection_lost(self, exc):
+        print('kys')
+        BingoClientProtocol.clients.remove(self.transport)
+
+    def data_received(self, data):
+        message = data.decode()
+        print('Data received: {!r}'.format(message))
+
+class BingoGame():
     def __init__(self, call_interval: float):
         self.call_interval = call_interval
+        self.game = asyncio.create_task(self.__bingo_roll(100, 4))
 
-    async def _init(self):
-        self.__gen = self.__bingo_roll_gen(100, self.call_interval)
-        return None
-
-    async def __bingo_roll_gen(self, rolls: int, interv: float):
+    async def __bingo_roll(self, rolls: int, timeout: float):
         for call in random.sample(range(rolls), rolls):
-            yield call
-            await asyncio.sleep(interv)
-    
-    async def bingo_sse_handler(self, reader, writer: asyncio.StreamWriter):
-        print("client")
-        for call in self.__gen:
-            writer.write(call)
-            await writer.drain()
+            next_call = asyncio.create_task(asyncio.sleep(timeout))
+            for client in BingoClientProtocol.clients:
+                client.write(f'\"call\": \"{call}\"'.encode())
+            await next_call
 
 
 async def main():
     loop = asyncio.get_running_loop()
-    bingo = await create_bingo_server(4)
-    srv = await loop.create_unix_server(bingo.bingo_sse_handler, "./assets/php/bingo.sock")
+    bingo = BingoGame(4)
+    srv = await loop.create_unix_server(lambda: BingoClientProtocol(), "./assets/php/bingo.sock")
+    os.chmod("./assets/php/bingo.sock", 0o777)
     async with srv:
-        await asyncio.Future()
+        await srv.serve_forever()
 
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        os.unlink("./assets/php/bingo.sock")
+    except OSError:
+        if os.path.exists("./assets/php/bingo.sock"):
+            raise
+    asyncio.run(main(), debug=True)

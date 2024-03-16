@@ -62,11 +62,8 @@ for(let i = 0; i < 7; i++) {
 
 $("#id01 tab_container button[name='bingo-login']").trigger("click");
 
-try {
-    const bingosrv = new EventSource("/assets/php/bingo_sse.php");
-    bingosrv.addEventListener("message", (e) => {
-        console.log(e.data);
-    });
-} catch (err){
-    console.log(err);
-}
+const bingosrv = new EventSource("/assets/php/bingo_sse.php");
+
+bingosrv.addEventListener("call", function(event) {
+    $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", [JSON.parse(event.data).call]);
+});
