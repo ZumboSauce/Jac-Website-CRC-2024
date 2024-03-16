@@ -1,0 +1,136 @@
+
+
+#ourCrew,html{
+    height: 100%;
+    width: 100%;
+}
+#ourCrew{
+    display: flex;
+    flex-direction: column;
+}
+a{
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    height: fit-content;
+}
+#titleBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #3e453b;
+    align-items: center;
+    height: 50px;
+}
+#main{
+    display: grid;
+    grid-template-columns: [first]1fr [second]1fr [third]1fr [fourth]1fr [last];
+    grid-template-rows: 0.1fr auto;
+    column-gap: 5%;
+    grid-template-areas: 
+    "sub sub sub sub"
+    "kira alexi zoe cos"
+    "kirat alexit zoet cost"
+    ". antoniu evan avery"
+    ". antoniut evant averyt"
+    
+}
+#main .image{
+    height: 200px;
+    max-width: 250px;
+}
+#heads{
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+}
+#crew{
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10%;
+}
+.text, .image{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heads{
+    grid-area: sub;
+}
+#kira{
+    grid-area: kira;
+}
+#kira:hover{   
+    border: 2px #af7d46 solid;
+    content: url(/assets/img/HeadShots/kira_skin.jpg); 
+}
+#kirat{
+    grid-area: kirat
+}
+#alexi{
+    grid-area: alexi;
+}
+#alexi:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/Alexi\ skin.png); 
+}
+#alexit{
+    grid-area: alexit;
+}
+#zoe{
+    grid-area: zoe;
+}
+#zoe:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/Zoé_skin.png); 
+}
+#zoet{
+    grid-area: zoet;
+}
+#cos{
+    grid-area: cos;
+}
+#cos:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/Cos_skin.png); 
+}
+#cost{
+    grid-area: cost;
+}
+#avery{
+    grid-area: avery;
+}
+#avery:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/Avery_Skin.png); 
+}
+#averyt{
+    grid-area: averyt;
+}
+#evan{
+    grid-area: evan;
+}
+#evan:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/evan_skin.jpg); 
+}
+#evant{
+    grid-area: evant;
+}
+#antoniu{
+    grid-area: antoniu;
+}
+#antoniu:hover{   
+    border: 4px #bfbe7f solid;
+    border: 8px #af7d46 solid;
+    content: url(/assets/img/HeadShots/antoniu_skin.jpg); 
+}
+#antoniut{
+    grid-area: antoniut;
+}

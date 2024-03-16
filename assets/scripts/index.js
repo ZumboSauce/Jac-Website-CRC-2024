@@ -23,4 +23,11 @@ function Appear()
     //     console.log("hii!!!")
     // }
 }
+
+function rotate(name){
+    var angle = 0;
+    document.getElementById(name).style.transform= "rotate3d(0, 1, 0, angle)";
+    angle++;
+    console.log("test",angle);
+}
     

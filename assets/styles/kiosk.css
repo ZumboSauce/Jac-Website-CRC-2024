@@ -1,8 +1,8 @@
 @import url(/assets/common/popup_mc/styles.css);
 
 html,body{
-    height: 100%;
-    width: 100%;
+    height: fit-content;
+    width: fit-content;
 }
 
 #kiosk{
@@ -52,6 +52,10 @@ h2{
 #video{
     display: flex;
     align-content: center;
+}
+#content{
+    margin-top: 20%;
+    gap: 5%;
 }
 #main{
     grid-area: main;
@@ -108,6 +112,16 @@ h2{
     margin-right: auto;
     overflow: hidden;
     object-fit: cover;
+
+    flex: 0 1 10%;
+    max-width: 75%;
+    padding: 5%;
+    background-color: #8c8686;
+    border-radius: 6px;
+    box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
+    grid-auto-flow: column;
+    border: black solid 2px;
+    min-width: 0;
 }
 #sideImgs{
     display: flex;
@@ -150,15 +164,15 @@ h2{
     /* background-color: aquamarine; */
     display: flex;
     justify-content: center;
-    
     margin-top: 1%;
     height: 80%;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-   
 }
-
+#robot #top{
+    margin-top: 0%;
+}
 .text{
     margin-right: 10%;
     padding-left: 1%;
