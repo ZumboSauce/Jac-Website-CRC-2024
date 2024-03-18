@@ -1,13 +1,17 @@
 @import url(/assets/common/popup_mc/styles.css);
 
 html,body{
-    height: fit-content;
-    width: fit-content;
+    height: 100%;
+    width: 100%;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
 }
 
 #kiosk{
     display: grid;
-    grid-template-columns: 2fr 0.5fr;
+    grid-template-columns: 2fr 0.7fr;
     grid-template-rows: 0.01fr 0.1fr 1fr;
     grid-template-areas: "nav nav" "header header" "main sidebar" "main ." " . language";
     background-image: url(/assets/img/netherbrick.jpg);
@@ -57,8 +61,13 @@ h2{
     align-content: center;
 }
 #content{
-    margin-top: 20%;
     gap: 5%;
+}
+#VideoPage{
+    background-image: url(/assets//img/cobblestonebackgroumd.webp);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }
 #main{
     grid-area: main;
@@ -108,9 +117,10 @@ h2{
     box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
     grid-auto-flow: column;
     border: black solid 2px;
+    padding: 1%;
 }
 .image{
-    max-height: 400px;
+    max-height: 600px;
     min-height: 300px;
     max-width: 75%;
     margin-top: 1%;
@@ -153,7 +163,6 @@ h2{
     margin-right: 10%;
 }
 #imgs li img{
-    height: 100%;
     width: 100%;
     margin-bottom: 3%;
     min-width: 50%;
@@ -172,7 +181,7 @@ h2{
     grid-area: header;
     /* background-color: aquamarine; */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 1%;
     height: 80%;
     width: fit-content;
@@ -215,10 +224,10 @@ a:hover{
 from {opacity: 0.1}
 to {opacity: 1}
 }
-.mySlides {
+#slideshow .mySlides {
     display: none;
     width: 200%;
-    height: 100%;
+    height: 450%;
   }
 .next{
     margin-left:60%;
