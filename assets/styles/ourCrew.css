@@ -31,10 +31,10 @@
     grid-template-areas: 
     "sub sub sub sub"
 
-    "kira alexi zoe cos"
-    "kirat alexit zoet cost"
-    ". antoniu evan avery"
-    ". antoniut evant averyt"
+    "kira paul zoe cos"
+    "kirat pault zoet cost"
+    "alexi antoniu evan avery"
+    "alexit antoniut evant averyt"
 
     "robo robo robo robo"
 
@@ -88,6 +88,13 @@
 }
 #kirat{
     grid-area: kirat
+}
+#paul{
+    grid-area: paul;
+}
+#paul:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/paul\ skin.png); 
 }
 #alexi{
     grid-area: alexi;

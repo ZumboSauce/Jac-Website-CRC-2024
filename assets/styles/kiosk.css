@@ -28,11 +28,17 @@ html,body{
     image-rendering: pixelated;
     background-repeat:repeat;
 }
-#video{
+/* #video{
+    background-image: url(/assets/img/cobblestonebackgroumd.webp);
+    image-rendering: pixelated;
+    background-repeat:repeat;
+} */
+#tutorial #video{
     margin-top: -20%;
     display: flex;
     align-content: center;
     justify-content: center;
+
 }
 #fr{
     display: grid;
