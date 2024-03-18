@@ -11,7 +11,12 @@
     <body id="kiosk">
         <nav id="links">
             <a id="back" href="/homeFR.html">Accueil</a>
-            <a id="fr" href="/kiosk.html">Francais</a>
+            <a href="/robotFR.html">Robot</a>
+            <a href="/videofr.html">Video</a>
+            <a href="/tutorialfr.html">Tutorial</a>
+            <a href="bingo.html">Bingo</a>
+            <a href="/ourCrewfr.html">Notre Crew</a>
+            <a id="fr" href="/kiosk.html">English</a>
         </nav>
     <nav id="top">
         <img class="lantern" src="/assets/img/Lantern.webp">
@@ -23,7 +28,15 @@
         <img class="lantern" src="/assets/img/Lantern.webp">
     </nav>
     <section id="main">
-        <img class="image" class="teamimage" src="">team image
+        <div class="slideshow-container">
+            
+            <img class="mySlides image" src="/assets/img/stairs.jpg">
+            <img class="mySlides image" src="/assets/img/WallSlay3.jpg">
+            <img class="mySlides image" src="/assets/img/painitng.jpg">
+
+            <button class="text prev" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="text next" onclick="plusDivs(1)">&#10095;</button>
+        </div>
         <p class="text" class="brainstorm"> 
             La construction du kiosque, comme tout autre projet de construction, 
             a commencé par un remue-méninge.  Puisque notre theme « Minecraft » 
@@ -50,7 +63,7 @@
 
 
         </p>
-        <img class="image" class="painting" src=""/>
+        <img class="image" class="painting" src="/assets/img/grouppainting.JPG"/>
         <p class="text" class="howFixed">
             Du début du semestre d’hiver jusqu’à la semaine de relâche,
             le progrès fut encore concentré sur la finition des murs.
@@ -63,27 +76,32 @@
 
         </p>
     </section>
-    <section id="sideImgs">
-        <ul id="imgs">
-            <li>
-                <img class="aside" src="./assets/img/WallSlay2.jpg">
-            </li>   
-            <li>
+    <section id="sideImgs">    
+                <img class="aside" src="./assets/img/kioskgroup/WallSlay1.jpg">
                 <img class="aside" src="./assets/img/SofiaSelfie1.jpg">
-            </li>
-            <li>
-                 <img class="aside" src="./assets/img/SofiaSelfie2.jpg">
-            </li>
-            <li>
+                <img class="aside" src="./assets/img/SofiaSelfie2.jpg">
                 <img class="aside" src="./assets/img/JeffSaw.jpg">
-            </li>
-            <li>
                 <img class="aside" src="./assets/img/jeffBaby.JPG">
-            </li>
-            <li>
                 <img class="aside" src="./assets/img/KioskPose.JPG">
-            </li>
-        </ul>
     </section>
+    <script>
+        var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
 </body>
 </html>

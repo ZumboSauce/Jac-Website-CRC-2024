@@ -1,0 +1,249 @@
+
+
+#ourCrew,html{
+    height: 100%;
+    width: 100%;
+}
+#ourCrew{
+    display: flex;
+    flex-direction: column;
+}
+#ourCrew a{
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    height: fit-content;
+}
+#titleBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #3e453b;
+    align-items: center;
+    height: 50px;
+}
+#main{
+    display: grid;
+    grid-template-columns: [first]1fr [second]1fr [third]1fr [fourth]1fr [last];
+    grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+    column-gap: 5%;
+    justify-items:center ;
+    grid-template-areas: 
+    "sub sub sub sub"
+
+    "kira paul zoe cos"
+    "kirat pault zoet cost"
+    "alexi antoniu evan avery"
+    "alexit antoniut evant averyt"
+
+    "robo robo robo robo"
+
+    "calvin tanner daniel patrick"
+    "calvint tannert danielt patrickt"
+    "jehan spencer alaa ."
+    "jehant spencert alaat ."
+
+    "kiosk kiosk kiosk kiosk"
+
+    "sofiaC talia jeff kai"
+    "sofiaCt taliat jefft kait"
+    "samantha jessica sofiaG kanta"
+    "samanthat jessicat sofiaGt kantat"
+    
+}
+#main .image{
+    height: 200px;
+    max-width: 250px;
+}
+#heads{
+    grid-area: sub;
+}
+
+#robotTeam{
+    grid-area: robo;
+}   
+#kioskTeam{
+    grid-area: kiosk;
+}   
+#crew{
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10%;
+}
+.text, .image{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heads{
+    grid-area: sub;
+}
+#kira{
+    grid-area: kira;
+}
+#kira:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/kira_skin.jpg); 
+}
+#kirat{
+    grid-area: kirat
+}
+#paul{
+    grid-area: paul;
+}
+#paul:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/paul\ skin.png); 
+}
+#alexi{
+    grid-area: alexi;
+}
+#alexi:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/Alexi\ skin.png); 
+}
+#alexit{
+    grid-area: alexit;
+}
+#zoe{
+    grid-area: zoe;
+}
+#zoe:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/Zoé_skin.png); 
+}
+#zoet{
+    grid-area: zoet;
+}
+#cos{
+    grid-area: cos;
+}
+#cos:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/Cos_skin.png); 
+}
+#cost{
+    grid-area: cost;
+}
+#avery{
+    grid-area: avery;
+}
+#avery:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/Avery_Skin.png); 
+}
+#averyt{
+    grid-area: averyt;
+}
+#evan{
+    grid-area: evan;
+}
+#evan:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/evan\ minecraft.png); 
+}
+#evant{
+    grid-area: evant;
+}
+#antoniu{
+    grid-area: antoniu;
+}
+#antoniu:hover{   
+    border-inline: 4px #af7d46 dotted;
+    content: url(/assets/img/HeadShots/antoniu_skin.jpg); 
+}
+#antoniut{
+    grid-area: antoniut;
+}
+#calvin{
+    grid-area: calvin;
+}
+#tanner{
+    grid-area: tanner;
+}
+#daniel{
+    grid-area: daniel;
+}
+#patrick{
+    grid-area: patrick;
+}
+#jehan{
+    grid-area: jehan;
+}
+#spencer{
+    grid-area: spencer;
+}
+#alaa{
+    grid-area: alaa;
+}
+#calvint{
+    grid-area: calvint;
+}
+#tannert{
+    grid-area: tannert;
+}
+#danielt{
+    grid-area: danielt;
+}
+#patrickt{
+    grid-area: patrickt;
+}
+#jehant{
+    grid-area: jehant;
+}
+#spencert{
+    grid-area: spencert;
+}
+#alaat{
+    grid-area: alaat;
+}
+
+#sofiaC{
+    grid-area: sofiaC;
+}
+#talia{
+    grid-area: talia;
+}
+#jeff{
+    grid-area: jeff;
+}
+#kai{
+    grid-area: kai;
+}
+#samantha{
+    grid-area: samantha;
+}
+#jessica{
+    grid-area: jessica;
+}
+#sofiaG{
+    grid-area: sofiaG;
+}
+#kanta{
+    grid-area: kanta;
+}
+#sofiaCt{
+    grid-area: sofiaCt;
+}
+#taliat{
+    grid-area: taliat;
+}
+#jefft{
+    grid-area: jefft;
+}
+#kait{
+    grid-area: kait;
+}
+#samanthat{
+    grid-area: samanthat;
+}
+#jessicat{
+    grid-area: jessicat;
+}
+#sofiaGt{
+    grid-area: sofiaGt;
+}
+#kantat{
+    grid-area: kantat;
+}

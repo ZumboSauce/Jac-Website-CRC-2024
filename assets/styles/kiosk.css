@@ -1,15 +1,15 @@
 @import url(/assets/common/popup_mc/styles.css);
 
 html,body{
-    height: 100%;
-    width: 100%;
+    height: fit-content;
+    width: fit-content;
 }
 
 #kiosk{
     display: grid;
     grid-template-columns: 2fr 0.5fr;
-    grid-template-rows: 0.1fr 1fr;
-    grid-template-areas: "header header" "main sidebar" "main ." " . language";
+    grid-template-rows: 0.01fr 0.1fr 1fr;
+    grid-template-areas: "nav nav" "header header" "main sidebar" "main ." " . language";
     background-image: url(/assets/img/netherbrick.jpg);
     background-repeat:repeat;
     background-size: contain;
@@ -17,9 +17,9 @@ html,body{
 #robot{
     display: grid;
     grid-template-columns: 2fr 0.5fr;
-    grid-template-rows: 0.1fr 1fr;
+    grid-template-rows: 0.01fr 1fr;
     grid-template-areas: "header header" "main sidebar" "main ." " . language";
-    background-image: url(/assets/img/ironBlockPiston.jpg);
+    background-image: url(/assets/img/netherrackBackground.jpeg);
     image-rendering: pixelated;
     background-repeat:repeat;
 }
@@ -27,19 +27,22 @@ html,body{
     background-image: url(/assets/img/woodwall.jpg);
     image-rendering: pixelated;
     background-repeat:repeat;
-
 }
-#video{
+/* #video{
+    background-image: url(/assets/img/cobblestonebackgroumd.webp);
+    image-rendering: pixelated;
+    background-repeat:repeat;
+} */
+#tutorial #video{
     margin-top: -20%;
     display: flex;
     align-content: center;
     justify-content: center;
+
 }
 #fr{
     display: grid;
     grid-area: 1/3;
-    /* margin-left: auto;  */
-
 }
 h2{
     font-size: 70px;
@@ -47,14 +50,19 @@ h2{
 }
 #robot h2{
     font-size: 70px;
-    color: black;
+    color: white;
 }
 #video{
     display: flex;
     align-content: center;
 }
+#content{
+    margin-top: 20%;
+    gap: 5%;
+}
 #main{
     grid-area: main;
+    justify-items: center;
     display: flex;
     flex-flow: column nowrap;
     /* background-color: white; */
@@ -74,6 +82,9 @@ h2{
     margin-right: auto; */
     justify-content: space-between;
     max-height: 1%;
+}
+#kiosk #links{
+    grid-area: nav;
 }
 .flip{
     transform:scaleX(-1);
@@ -104,10 +115,18 @@ h2{
     max-width: 75%;
     margin-top: 1%;
     scale: 90%;
-    margin-left: auto;
-    margin-right: auto;
     overflow: hidden;
     object-fit: cover;
+
+    flex: 0 1 10%;
+    max-width: 75%;
+    padding: 5%;
+    background-color: #8c8686;
+    border-radius: 6px;
+    box-shadow: inset 2px 2px #fbfbfb, inset -2px -2px #545454;
+    grid-auto-flow: column;
+    border: black solid 2px;
+    min-width: 0;
 }
 #sideImgs{
     display: flex;
@@ -129,7 +148,6 @@ h2{
         min-width: 0;
     }
 }
-
 #imgs{
     list-style-type: none;
     margin-right: 10%;
@@ -145,20 +163,25 @@ h2{
     grid-auto-flow: column;
     border: black double 2px;
 }
+#robot #head{
+    grid-area: header;
+    width: 100%;
+    height: min-content;
+}
 #top{
     grid-area: header;
     /* background-color: aquamarine; */
     display: flex;
     justify-content: center;
-    
     margin-top: 1%;
     height: 80%;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-   
 }
-
+#robot #top{
+    margin-top: 0%;
+}
 .text{
     margin-right: 10%;
     padding-left: 1%;
@@ -174,7 +197,7 @@ a{
     display: flex;
     font-size: 20px;
     text-decoration: none;
-    color: black;
+    color: white;
     height: fit-content;
 }
 a:hover{
@@ -183,6 +206,20 @@ a:hover{
 #robot a:hover{
     color: #b78438;
 }
-#back{
-    margin-right: auto;
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+from {opacity: 0.1}
+to {opacity: 1}
+}
+.mySlides {
+    display: none;
+    width: 200%;
+    height: 100%;
+  }
+.next{
+    margin-left:60%;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,43 @@
     <link rel="stylesheet" href="/assets/styles/kiosk.css">
     <link rel="stylesheet" href="/assets/styles/styles.css">
 </head>
+
 <body id="robot">
-    <nav id="top">
-        <a id="back" href="/index.html">Home</a>
-        <img class="lamp" src="/assets/img/RedstoneLampOff.webp">
-        <img src="/assets/img/RedstoneLampOn.webp" style="display: none;">
-        <header>
-            <h2>Robot</h2>
-        </header>
-        <img class="lamp" src="/assets/img/RedstoneLampOff.webp">
-    </nav>
-    <a id="fr" href="/robotFR.html">Francais</a>
+    <section id="head">
+        <nav id="links">
+            <a href="/index.html">Home</a>
+            <a href="/kiosk.html">Kiosk</a>
+            <a href="/video.html">Video</a>
+            <a href="/tutorial.html">Tutorial</a>
+            <a href="bingo.html">Bingo</a>
+            <a href="/ourCrew.html">Our Crew</a>
+            <a id="fr" href="/robotFR.html">Francais</a>
+        </nav>
+        <nav id="top">
+            <img class="lamp" src="/assets/img/RedstoneLampOff.webp">
+            <img src="/assets/img/RedstoneLampOn.webp" style="display: none;">
+            <header>
+                <h2>Robot</h2>
+            </header>
+            <img class="lamp" src="/assets/img/RedstoneLampOff.webp">
+        </nav>
+    </section>
     <section id="main">
-        <img class="image" class="teamimage" src="/assets/img/placeholder1.jpg"/>
+
+        <div class="slideshow-container">
+            
+            <img class="mySlides image" src="/assets/img/IMG_1149.JPG">
+            <img class="mySlides image" src="/assets/img/WallSlay1.jpg">
+            <img class="mySlides image" src="/assets/img/jeffBaby.JPG">
+            <img class="mySlides image" src="/assets/img/JeffSaw.jpg">
+
+            <button class="text prev" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="text next" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+        </div>
         <p class="text" class="brainstorm">
-            Lorem ipsum dolor sit amet, consectetur 
+            Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco
@@ -32,9 +55,9 @@
             cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum.
         </p>
-        <img class="image" class="winterBreak" src="/assets/img/placeholder1.jpg"/>
+        <img class="image" class="winterBreak" src="/assets/img/Robot Disassembled.jpg" />
         <p class="text" class="challenges">
-            Lorem ipsum dolor sit amet, consectetur 
+            Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco
@@ -45,9 +68,18 @@
             cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum.
         </p>
-        <img class="image" class="painting" src="/assets/img/placeholder1.jpg"/>
+        <div class="slideshow-container">
+            
+            <img class="mySlides2 image" src="/assets/img/IMG_1149.JPG">
+            <img class="mySlides2 image" src="/assets/img/WallSlay1.jpg">
+            <img class="mySlides2 image" src="/assets/img/jeffBaby.JPG">
+            <img class="mySlides2 image" src="/assets/img/JeffSaw.jpg">
+
+            <button class="text prev" onclick="plusDivs2(-1)">&#10094;</button>
+            <button class="text next" onclick="plusDivs2(1)">&#10095;</button>
+        </div>
         <p class="text" class="howFixed">
-            Lorem ipsum dolor sit amet, consectetur 
+            Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco
@@ -60,29 +92,32 @@
         </p>
     </section>
     <section id="sideImgs">
-        <ul id="imgs">
-            <li>
-                <img class="aside" src="/assets/img/excitedRoboTeam.PNG">
-            </li>   
-            <li>
-                <img class="aside" src="/assets/img/placeholder1.jpg">
-            </li>
-            <li>
-                 <img class="aside" src="/assets/img/placeholder1.jpg">
-            </li>
-            <li>
-                <img class="aside" src="./assets/img/placeholder1.jpg">
-            </li>
-            <li>
-                <img class="aside" src="./assets/img/placeholder1.jpg">
-            </li>
-            <li>
-                <img class="aside" src="./assets/img/placeholder1.jpg">
-            </li>
-            
-           
-            
-        </ul>
+        <img class="aside" src="/assets/img/ExcitedRoboTeam.PNG">
+        <img class="aside" src="/assets/img/SprayingSaw.JPG">
+        <img class="aside" src="/assets/img/placeholder1.jpg">
+        <img class="aside" src="./assets/img/placeholder1.jpg">
+        <img class="aside" src="./assets/img/placeholder1.jpg">
+        <img class="aside" src="./assets/img/placeholder1.jpg">
     </section>
+    <script>
+    var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 </body>
+
 </html>
