@@ -49,7 +49,13 @@
     "sofiaCt taliat jefft kait"
     "samantha jessica sofiaG kanta"
     "samanthat jessicat sofiaGt kantat"
-    
+
+    "video video video video"
+
+    "zoeV sofiaV adenV calvinV"
+    "zoeVt sofiaVt adenVt calvinVt"
+    "averyV danielV antoniuV patrickV"
+    "averyVt danielVt antoniuVt patrickVt"
 }
 #main .image{
     height: 200px;
@@ -246,4 +252,58 @@
 }
 #kantat{
     grid-area: kantat;
+}
+
+#videoTeam{
+    grid-area: video;
+}
+
+#aden{
+    grid-area: adenV;
+}
+#zoeV{
+    grid-area: zoeV;
+}
+#sofiaV{
+    grid-area: sofiaV;
+}
+#calvinV{
+    grid-area: calvinV;
+}
+#averyV{
+    grid-area: averyV;
+}
+#danielV{
+    grid-area: danielV;
+}
+#antoniuV{
+    grid-area: antoniuV;
+}
+#patrickV{
+    grid-area: patrickV;
+}
+
+#adent{
+    grid-area: adenVt;
+}
+#zoeVt{
+    grid-area: zoeVt;
+}
+#sofiaVt{
+    grid-area: sofiaVt;
+}
+#calvinVt{
+    grid-area: calvinVt;
+}
+#averyVt{
+    grid-area: averyVt;
+}
+#danielVt{
+    grid-area: danielVt;
+}
+#antoniuVt{
+    grid-area: antoniuVt;
+}
+#patrickVt{
+    grid-area: patrickVt;
 }

@@ -83,6 +83,14 @@ h2{
     margin-left: auto; */
     position: relative;
     bottom: -50px;
+    padding: 1%;
+}
+.light{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
 }
 #links{
     grid-area: header;
