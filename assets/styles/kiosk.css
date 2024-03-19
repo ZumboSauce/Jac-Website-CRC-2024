@@ -44,6 +44,13 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     justify-content: center;
 
 }
+#VideoPage #video{
+    margin-top: -20%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
 #fr{
     display: grid;
     grid-area: 1/3;
