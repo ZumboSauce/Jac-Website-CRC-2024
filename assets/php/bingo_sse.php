@@ -3,7 +3,7 @@
     session_start();
     header('Content-Type: text/event-stream');
     header('Cache-Control: no-cache');
-    $sock = stream_socket_client("unix://{$_SERVER['DOCUMENT_ROOT']}assets/php/bingo.sock", $errno, $errst, $flags = STREAM_CLIENT_CONNECT | STREAM_CLIENT_ASYNC_CONNECT);
+    $sock = stream_socket_client("unix://{$_SERVER['DOCUMENT_ROOT']}/assets/php/bingo.sock", $errno, $errst, $flags = STREAM_CLIENT_CONNECT);
     $_SESSION['user_id'] = 1;
     session_write_close();
     if($sock){

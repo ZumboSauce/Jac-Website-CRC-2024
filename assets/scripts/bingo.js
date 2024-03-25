@@ -62,25 +62,29 @@ async function textures_load(){
 }
 
 textures_load().then(textures => {
+    $.ajax({
+        type: 'post',
+        url: '/assets/php/bingo_card_request.php',
+        dataType: 'json',
+        success: function (resp) {
+            console.log("cum");
+            //$("#bingo-cards .bingo-card")
+        }
+    });
+
     var timeout = 1000;
     var bingosrv;
     function bingosrv_reconnect(){ setTimeout(() => {
         timeout *= 2; 
         bingosrv_connect();
-    }, timeout)}
+    }, timeout)};
+
     function bingosrv_connect(){
         bingosrv = new EventSource("/assets/php/bingo_sse.php");
         bingosrv.addEventListener("call", function(event) {
-            try {
-                for (item of JSON.parse(event.data).call) {
-                    $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", textures[textures["idx"][item]].texture);
-                }
-            } catch {
-                bingosrv.close();
-                console.log("kys");
-                bingosrv_reconnect();
+            for (item of JSON.parse(event.data).call) {
+                $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", textures[textures["idx"][item]].texture);
             }
-
         });
         bingosrv.onerror = (err) => {
             bingosrv.close();
