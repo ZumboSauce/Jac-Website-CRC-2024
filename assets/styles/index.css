@@ -1,9 +1,10 @@
 #indexLinks{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #3e453b;
     align-items: center;
     height: 200px;
+    width: 100%;
 }
 #logo {
    scale: 50%;
