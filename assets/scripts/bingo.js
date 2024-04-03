@@ -1,3 +1,15 @@
+async function api_request(query, args){
+    $.ajax({
+        type: 'post',
+        url: '/assets/php/bingo_api.php',
+        data: { QUERY: query, ARGS: args},
+        dataType: 'json',
+        success: function (resp) {
+            return JSON.parse(resp);
+        }
+    });
+};
+
 $("#id01 .tab_container :not(.close)").on("click", function(){
     $("#id01 .popup-mc > *").css("display", "none");
     switch($(this).attr('class')){
@@ -62,16 +74,8 @@ async function textures_load(){
 }
 
 textures_load().then(textures => {
-    $.ajax({
-        type: 'post',
-        url: '/assets/php/bingo_card_request.php',
-        dataType: 'json',
-        success: function (resp) {
-            console.log("cum");
-            //$("#bingo-cards .bingo-card")
-        }
-    });
-
+    api_request("request_cards", "{}");
+    
     var timeout = 1000;
     var bingosrv;
     function bingosrv_reconnect(){ setTimeout(() => {
@@ -80,11 +84,10 @@ textures_load().then(textures => {
     }, timeout)};
 
     function bingosrv_connect(){
-        bingosrv = new EventSource("/assets/php/bingo_sse.php");
+        bingosrv = new EventSource("http://localhost:5600/bingo_game/");
         bingosrv.addEventListener("call", function(event) {
-            for (item of JSON.parse(event.data).call) {
-                $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", textures[textures["idx"][item]].texture);
-            }
+            item = JSON.parse(event.data).call;
+            $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", textures[textures["idx"][item]].texture);
         });
         bingosrv.onerror = (err) => {
             bingosrv.close();
