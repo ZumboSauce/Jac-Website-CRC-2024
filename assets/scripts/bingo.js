@@ -1,14 +1,11 @@
-async function api_request(query, args){
-    $.ajax({
+function api_request(query, args){
+    return $.ajax({
         type: 'post',
         url: '/assets/php/bingo_api.php',
         data: { QUERY: query, ARGS: args},
-        dataType: 'json',
-        success: function (resp) {
-            return JSON.parse(resp);
-        }
+        dataType: 'json'
     });
-};
+}
 
 $("#id01 .tab_container :not(.close)").on("click", function(){
     $("#id01 .popup-mc > *").css("display", "none");
@@ -74,30 +71,32 @@ async function textures_load(){
 }
 
 textures_load().then(textures => {
-    api_request("request_cards", "{}");
-    
-    var timeout = 1000;
-    var bingosrv;
-    function bingosrv_reconnect(){ setTimeout(() => {
-        timeout *= 2; 
-        bingosrv_connect();
-    }, timeout)};
-
-    function bingosrv_connect(){
-        bingosrv = new EventSource("http://localhost:5600/bingo_game/");
+    api_request("request_cards", "{}").done(function(r){
+        for (const [idx, card] of r['resp'].entries()){
+            console.log(card);
+            for (const spot of card){
+                $(`#id02 .bingo-card_container .bingo-card_wrapper:nth-child(${idx+1}) .bingo-spot:nth-child(${spot['idx']+1})`).css("background", `url(${textures[textures["idx"][spot.number]].texture}) center/90% no-repeat #8b8b8b`);
+            }
+        }
+    }).fail(function(r){
+        console.log("b");
+    });
+    var bingo_sse_reconnect_time = 1;
+    function bingo_sse_connect(){
+        bingosrv = new EventSource("http://localhost:8080/");
         bingosrv.addEventListener("call", function(event) {
             item = JSON.parse(event.data).call;
             $("#bingo-machine .bingo-machine").trigger("bingo-machine:call", textures[textures["idx"][item]].texture);
         });
+        bingosrv.onopen = (e) => {
+            bingo_sse_reconnect_time = 1;
+        }
         bingosrv.onerror = (err) => {
             bingosrv.close();
-            console.log("sse");
-            if(timeout > 64){
-                console.log("kys");
-            } else {
-                bingosrv_reconnect();
-            }
+            bingo_sse_reconnect_time *= 2;
+            setTimeout(() => {bingo_sse_connect();}, bingo_sse_reconnect_time * 1000);
+            console.log(bingo_sse_reconnect_time);
         };
     }
-    bingosrv_connect();
+    bingo_sse_connect();
 });

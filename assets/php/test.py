@@ -1,26 +1,28 @@
 import random
-from math import floor
 import numpy as np
-
-def splice_random(tgt, n, max_chunk):
-    tgt_sorted = sorted(tgt)
-    empty = (tgt_sorted[-1] - tgt_sorted[0]) - len(tgt)
-    empty = empty if empty > 0 else 0
-    sample_nerf = n - len(tgt) + 1 if len(tgt) <= n else 0
-    delims = [tgt[0], *sorted(random.sample(range(tgt_sorted[0]+1, tgt_sorted[-1]), n-(1+sample_nerf))), tgt[-1]-empty]
-    while(True):
-        if len([size for size in [delims[i+1] - delims[i] for i in range(n-sample_nerf)] if size > max_chunk]):
-            delims = [tgt[0], *sorted(random.sample(range(tgt_sorted[1], tgt_sorted[-2]), n-(1+sample_nerf))), tgt[-1]-empty]
-            continue
-        break  
-    random.shuffle(tgt)
-    it = iter(tgt)
-    return [[next(it) for _ in range(size)] for size in [delims[i+1] - delims[i] for i in range(n-sample_nerf)]] + [[] for _ in range(sample_nerf)]
+import copy
+import timeit
 
 
-card = {}
+gen_rows = []
+cards = []
+while True:
+    try:
+        thing = [random.sample([idx for idx in range(col * 10, col * 10 + 10)], 10) for col in range(9)]
+        gen_rows = random.sample([[row for row in [thing[idx].pop() for idx in np.random.choice(range(9), size=5, replace=False, p=[len(col)/np.sum([len(col) for col in thing]) for col in thing])]] for _ in range(18)], 18)
+    except:
+        continue
+    break
+p = lambda d: zip(d.keys(), sorted(d.values()))
 
-#select all under i * 10
-#get sample of size selection from 0 to 2
-#set keys in dict using comprehension where  row * 10 + i: value
+for i in range(6):
+    card_sorted = dict()
+    a = {k:sorted(gen_rows.pop())+[0] for k in range(3)}
+    { {idx:row.pop() for idx,row in a if j*10 <= row[0] < (j+1)*10} }
+    #{k*9+j:v for k,v in p( { idx: for idx, row in enumerate(a) if j*10 <= row[0] < (j+1)*10 } )
+    #card_sorted.update( {k*9+j:v for k,v in p( { idx:row.pop(0) for idx, row in enumerate(a) if j*10 <= row[0] < (j+1)*10 } )} )
+    print(card_sorted)
 
+        
+
+            

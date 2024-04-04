@@ -34,7 +34,7 @@ class BingoServer():
 
         pathlib.Path.unlink(_SOCK_PATH, True)
         self.api = self.__api()
-        self.api.prep(self.db_pool)
+        await self.api.prep(self.db_pool)
         api = await asyncio.start_unix_server(self.api._handler, _SOCK_PATH)
         await api.start_serving()
         _SOCK_PATH.chmod(0o777)
@@ -84,14 +84,17 @@ class BingoServer():
 
         async def _handler(self, r: asyncio.StreamReader, w: asyncio.StreamWriter):
             query = (await r.read(200)).decode()
-            try:
-                for evt, data in json.loads(query).items():
-                    task = asyncio.create_task(self.__evt_handler._evt_handlers[evt](self, data))
-            except:
-                print("malformed")
+            for evt, data in json.loads(query).items():
+                task = asyncio.create_task(self.__evt_handler._evt_handlers[evt](self, data))
+                w.write(json.dumps(await task).encode())
+            w.write_eof()
 
-        def prep(self, pool):
+        async def prep(self, pool):
             self._db_pool = pool
+            async with self._db_pool.acquire() as conn:
+                async with conn.cursor() as cur:
+                    await cur.execute(  """TRUNCATE TABLE space;
+                                            TRUNCATE TABLE card;""")
         
         @__evt_handler
         async def check_spot(self, arg: dict):
@@ -109,51 +112,54 @@ class BingoServer():
         async def request_cards(self, arg: dict):
             async with self._db_pool.acquire() as conn:
                 async with conn.cursor(aiomysql.DictCursor) as cur:
-                    await cur.execute(  """SELECT card.user_id, user.id
+                    await cur.execute(  """SELECT card.id
                                             from card
-                                            INNER JOIN user ON card.user_id = user.id
+                                            INNER JOIN user 
+                                            ON card.user_id = user.id
                                             WHERE user.id = %s""", (arg['user_id'],))
                     if(cur.rowcount > 0):
-                        print("exists")
-                        cards = await cur.fetchall()
-                        for card in cards:
-                            await cur.execute( """SELECT space.card_id, card.id, card.user_id, user.id
-                                                    from space
+                        cards = []
+                        card_ids = await cur.fetchall()
+                        for card_id in card_ids:
+                            await cur.execute( """SELECT idx, number, called
+                                                    from space as s
                                                     INNER JOIN 
                                                     card as c
-                                                    ON space.card_id = c.id
-                                                    INNER JOIN user ON c.user_id = user.id
-                                                    WHERE space.card_id = %s""", (card['id'],))
-                            spaces = await cur.fetchall()
-                            for space in spaces:
-                                print(space)
+                                                    ON s.card_id = c.id
+                                                    INNER JOIN
+                                                    user as u
+                                                    ON c.user_id = u.id
+                                                    WHERE s.card_id = %s""", (card_id['id'],))
+                            cards.append(await cur.fetchall())
+                        return {"resp": cards}
                     else:
                         cards = []
-                        thing = [random.sample([idx for idx in range(col * 10, col * 10 + 10)], 10) for col in range(10)]
-                        gen_rows = random.sample([[row for row in [thing[idx].pop() for idx in np.random.choice(range(10), size=5, replace=False, p=[len(col)/np.sum([len(col) for col in thing]) for col in thing])]] for _ in range(18)], 18)
+                        gen_rows = []
+                        while True:
+                            try:
+                                thing = [random.sample([idx for idx in range(col * 10, col * 10 + 10)], 10) for col in range(9)]
+                                gen_rows = random.sample([[row for row in [thing[idx].pop() for idx in np.random.choice(range(9), size=5, replace=False, p=[len(col)/np.sum([len(col) for col in thing]) for col in thing])]] for _ in range(18)], 18)
+                            except:
+                                continue
+                            break
+                        p = lambda d: zip(d.keys(), sorted(d.values()))
                         for i in range(6):
-                            card = dict()
-                            rows = sorted(idx for row in [gen_rows.pop() for row in range(3)] for idx in row)
-                            cols = [[items for items in rows if j*10 <= items < (j+1)*10] for j in range(10)]
-                            for col in cols:
-                                for idx, k in enumerate(sorted(random.sample(range(3), len(col)))):
-                                    val = rows.pop(0)
-                                    card[k * 10 + math.floor(val/10)] = val
+                            card_sorted = dict()
+                            a = [sorted(gen_rows.pop())+[0] for _ in range(3)]
+                            for j in range(9):
+                                card_sorted.update( {k*9+j:v for k,v in p( { idx:row.pop(0) for idx, row in enumerate(a) if j*10 <= row[0] < (j+1)*10 } ) } )
+                                                
                             await cur.execute( """INSERT INTO card (spaces_left, user_id)
                                                     VALUES (%s, %s)""", (15, arg['user_id'],))
                             card_id = cur.lastrowid
-                            print(card_id)
-                            #use the execute many thing
-                            for key, item in card.items():                                    
+                            for key, item in card_sorted.items():                                    
                                 await cur.execute ( """INSERT INTO space (idx, number, card_id)
                                                         VALUES (%s, %s, %s)""", (key, item, card_id,))
-                        await cur.execute(  """SELECT card.user_id, user.id
-                                                from card
-                                                INNER JOIN user ON card.user_id = user.id
-                                                WHERE user.id = %s""", (arg['user_id'],))
-                        a = await cur.fetchall()
-                        print(a)
-                        return {'resp': a}
+                            await cur.execute(  """SELECT idx, number, called
+                                                        FROM space
+                                                        WHERE card_id = (%s)""", card_id)
+                            cards.append(await cur.fetchall())
+                        return {'resp': cards}
 
     
 

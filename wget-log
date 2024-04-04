@@ -1,0 +1,7 @@
+--2024-04-03 06:42:15--  https://cdn.discordapp.com/attachments/1146191737895796847/1224896612950868078/mysql.sql?ex=661f28de
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving cdn.discordapp.com (cdn.discordapp.com)... 162.159.135.233, 162.159.133.233, 162.159.130.233, ...
+Connecting to cdn.discordapp.com (cdn.discordapp.com)|162.159.135.233|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-04-03 06:42:16 ERROR 404: Not Found.
+

@@ -29,11 +29,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    & > img {
-        width: 100%;
-        image-rendering: pixelated;
-        grid-area: 1 / 1 / 2 / 2;
-    }
+    image-rendering: pixelated;
+    
     &:hover::before {
         content: "";
         backdrop-filter: brightness(2) opacity(.5);
