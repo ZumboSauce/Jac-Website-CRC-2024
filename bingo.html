@@ -88,6 +88,20 @@
       </div>
     </div>
   </div>
+  <svg width=0 height=0>
+    <filter id="enchant">
+      <feImage href="assets/img/mc/Enchanted_Item_Glint.png" result="img" width="50%" height="100%" x="0%" y="0%">
+        <animate attributeName="x" values="0%;50%" dur="2s" repeatCount="indefinite" calcMode="paced"/>
+      </feImage>
+      
+      <feComponentTransfer in="img" result="opac">
+        <feFuncA type="linear" slope="0.5"></feFuncA>
+      </feComponentTransfer>
+      <feTile in="opac" x="0%" y="0%" width="100%" height="100%" result="tile">
+      </feTile>
+      <feComposite operator="atop" in="tile" in2="SourceGraphic" />
+    </filter>
+  </svg>
 </body>
 
 <script src="/assets/scripts/bingo.js"></script>

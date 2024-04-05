@@ -30,7 +30,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     image-rendering: pixelated;
-    
+    filter: url('#enchant');
+
     &:hover::before {
         content: "";
         backdrop-filter: brightness(2) opacity(.5);

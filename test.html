@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
 <style>
   #cum {
+    display: inline-block;
     width: 100px;
     height: 100px;
-    background-color: red;
-    filter: url('#image') opacity(0.5) ;
+    filter: url('#image');
   }
   #aa {
     width: 50px;
     height: 50px;
+    background-color: blue;
   }
 </style>
 
-<body id="tutorial">
+<body>
   <div id="cum">
     <div id="aa">
-      
+      aaaaaaaaaaaaaaa
     </div>
   </div>
+  <canvas id="enchant" width="100px" height="100px"></canvas>
+  <img src="assets/img/mc/Enchanted_Item_Glint.png" style="display:none" id="enchantglint"/>
 
-  <svg width=0 height=0>
-    <filter id="image">
-      <feImage href="https://cdn.vectorstock.com/i/preview-1x/93/26/three-rockets-logo-or-small-vector-43509326.jpg" result="img" />
-      <feBlend in="img" in2="image"/>
-    </filter>
-  </svg>
 </body>
+
+<script src="/test.js"></script>
 
 </html>
