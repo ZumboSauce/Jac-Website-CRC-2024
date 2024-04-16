@@ -9,6 +9,7 @@ import pathlib
 import numpy as np
 import math
 from aiohttp import web
+import itertools
 
 _BINGO_QUEUE_SIZE:int = 7
 _BINGO_CALL_INTERVAL:float = 4.0
@@ -45,6 +46,7 @@ class BingoServer():
         for call in random.sample(range(_BINGO_MAX_NUM), _BINGO_MAX_NUM):
             next_call = asyncio.create_task(asyncio.sleep(_BINGO_CALL_INTERVAL))
             self.__sse_handler._call_log.appendleft(call)
+            self.__api._call_log.appendleft(call)
             for client in self.__sse_handler._client_pool:
                 await self.__sse_handler.sse_event(client, "call", {"call": call})
             await next_call
@@ -73,9 +75,9 @@ class BingoServer():
             await stream.write(f"event: {evt}\ndata: {json.dumps(data)}\n\n".encode())
 
     class __api():
-
+        _call_log: deque = deque(maxlen=_BINGO_QUEUE_SIZE)
         def __init__(self):
-            self._db_pool = None
+            pass
 
         class __evt_handler():
             _evt_handlers = dict() 
@@ -84,12 +86,13 @@ class BingoServer():
 
         async def _handler(self, r: asyncio.StreamReader, w: asyncio.StreamWriter):
             query = (await r.read(200)).decode()
+            print(query)
             for evt, data in json.loads(query).items():
                 task = asyncio.create_task(self.__evt_handler._evt_handlers[evt](self, data))
                 w.write(json.dumps(await task).encode())
             w.write_eof()
 
-        async def prep(self, pool):
+        async def prep(self, pool: aiomysql.Pool):
             self._db_pool = pool
             async with self._db_pool.acquire() as conn:
                 async with conn.cursor() as cur:
@@ -98,15 +101,17 @@ class BingoServer():
         
         @__evt_handler
         async def check_spot(self, arg: dict):
+            if(arg['space_number'] not in self._call_log): return {'resp': 0}
             async with self._db_pool.acquire() as conn:
-                async with conn.cursor() as cur:
+                async with conn.cursor(aiomysql.DictCursor) as cur:
                     await cur.execute(   """UPDATE space
                                             INNER JOIN card ON space.card_id = card.id
                                             INNER JOIN user ON card.user_id = user.id
                                             SET called = 1
-                                            WHERE number = %s AND space.id = %s AND space.card_id = %s AND card.user_id = %s ;""", (arg['space_number'], arg['space_id'], arg['card_id'], arg['user_id'], )
+                                            WHERE number = %s AND card.user_id = %s ;""", (arg['space_number'], arg['user_id'], )
                                         )
-                    return {'resp': 1 if cur.rowcount() else 0}
+                    print(cur.rowcount)
+                    return {'resp': 1 if cur.rowcount else 0}
             
         @__evt_handler
         async def request_cards(self, arg: dict):

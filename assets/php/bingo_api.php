@@ -6,7 +6,7 @@ $sock = stream_socket_client("unix://{$_SERVER['DOCUMENT_ROOT']}assets/php/bingo
 if(! $sock){
     echo json_encode(array('conn_failed' => 1));
 } else {
-    fwrite($sock, json_encode(array($_POST['QUERY'] => QUERIES[ $_POST['QUERY'] ]($_POST['ARGS']) )));
+    fwrite($sock, json_encode(array($_POST['QUERY'] => QUERIES[ $_POST['QUERY'] ](json_decode($_POST['ARGS'], true)) )));
     $resp = fread($sock, 4096);
     echo $resp;
     flush();

@@ -6,40 +6,36 @@
 </head>
 
 <style>
-  #cum {
+  #th {
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    filter: url('#enchant');
+    filter: url("#enchant");
+    image-rendering: pixelated;
   }
-  #aa {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+
+
+  body {
+    background-color: gray;
   }
 </style>
 
 <body>
-  <div id="cum">
-    <div id="aa">
-      aaaaaaaaaaaaaaa
-    </div>
-  </div>
+
+  <img id="th" src="assets/img/mc/Rotten_Flesh.png" width="400" height="400" />
 
   <svg width=0 height=0>
     <filter id="enchant">
-      <feImage href="assets/img/mc/Enchanted_Item_Glint.png" result="img" width="50%" height="100%" x="0%" y="0%">
-        <animate attributeName="x" values="0%;51%" dur="2s" repeatCount="indefinite" calcMode="paced"/>
-      </feImage>
-
+      <feImage href="enchant.gif" result="img" width="100%" height="100%" x="0%" y="0%"/>
       <feComponentTransfer in="img" result="opac">
-        <feFuncA type="linear" slope="0.5"></feFuncA>
+        <feFuncA type="linear" slope="0.3"></feFuncA>
+        <feFuncR type="table" tableValues=".09803921568 .63137254902"></feFuncR>
+        <feFuncG type="table" tableValues=".03137254901 .32156862745"></feFuncG>
+        <feFuncB type="table" tableValues=".18039215686 .99607843137"></feFuncB>
       </feComponentTransfer>
-      <feTile in="opac" x="0%" y="0%" width="100%" height="100%" result="tile">
-      </feTile>
-      <feComposite operator="atop" in="tile" in2="SourceGraphic" />
+      <feTile in="opac" result="tile" width="100%" height="100%"/>
+      <feComposite operator="atop" in="img" in2="SourceGraphic" />
     </filter>
   </svg>
 
 </body>
+
 </html>

@@ -1,10 +1,21 @@
-function api_request(query, args){
-    return $.ajax({
-        type: 'post',
-        url: '/assets/php/bingo_api.php',
-        data: { QUERY: query, ARGS: args},
-        dataType: 'json'
-    });
+function api_request(query, args, ctx){
+    if(typeof ctx !== "undefined") {
+        return $.ajax({
+            type: 'post',
+            url: '/assets/php/bingo_api.php',
+            context: ctx,
+            data: { QUERY: query, ARGS: JSON.stringify(args)},
+            dataType: 'json'
+        });
+    } else {
+        return $.ajax({
+            type: 'post',
+            url: '/assets/php/bingo_api.php',
+            data: { QUERY: query, ARGS: JSON.stringify(args)},
+            dataType: 'json'
+        });
+    }
+
 }
 
 $("#id01 .tab_container :not(.close)").on("click", function(){
@@ -71,11 +82,11 @@ async function textures_load(){
 }
 
 textures_load().then(textures => {
-    api_request("request_cards", "{}").done(function(r){
+    api_request("request_cards", {}).done(function(r){
         for (const [idx, card] of r['resp'].entries()){
             console.log(card);
             for (const spot of card){
-                $(`#id02 .bingo-card_container .bingo-card_wrapper:nth-child(${idx+1}) .bingo-spot:nth-child(${spot['idx']+1})`).css("background", `url(${textures[textures["idx"][spot.number]].texture}) center/90% no-repeat #8b8b8b`);
+                $(`#id02 .bingo-card_container .bingo-card_wrapper:nth-child(${idx+1}) .bingo-spot:nth-child(${spot['idx']+1})`).append(`<img src="${textures[textures["idx"][spot.number]].texture}" alt="${spot.number}" ${spot.called==1 ? 'class="called"' : ''}>`);
             }
         }
     }).fail(function(r){

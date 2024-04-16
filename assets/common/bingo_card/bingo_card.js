@@ -5,16 +5,10 @@ $(".bingo-card").each(function() {
 });
 
 $(".bingo-card .bingo-spot").on("click", function() {
-    $.ajax({
-        context: this,
-        type: 'post',
-        url: '/assets/php/bingo_validate_spot.php',
-        data: {card: $(this).parents(".bingo-card_wrapper").index(), idx: $(this).index()},
-        dataType: 'json',
-        success: function (resp) {
-            if (resp.resp){
-                $(this).css("background-color", "red");
-            }
+    api_request("check_spot", {space_number: Number($(this).children("img").attr('alt'))}, this).done(function(r){
+        if(r.resp == 1){
+            console.log($(this));
+            $(this).children("img").addClass("called");
         }
     });
 });
