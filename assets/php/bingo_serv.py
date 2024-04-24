@@ -23,8 +23,6 @@ class BingoServer():
     async def start_serving(self):
         self.bingo_roll = asyncio.create_task(self.__bingo_roll())
         self.db_pool = await aiomysql.create_pool(host="localhost", port=3306, user="cheese", password="sudo", db="bingo", autocommit=True)
-        
-        #await self.game_prep()
 
         srv = web.Application()
         srv.add_routes([web.get('/', self.__sse_handler())])
@@ -34,7 +32,7 @@ class BingoServer():
         await sse_site.start()
 
         pathlib.Path.unlink(_SOCK_PATH, True)
-        self.api = self.__api()
+        self.api = self.__api(self.__sse_handler)
         await self.api.prep(self.db_pool)
         api = await asyncio.start_unix_server(self.api._handler, _SOCK_PATH)
         await api.start_serving()
@@ -76,7 +74,9 @@ class BingoServer():
 
     class __api():
         _call_log: deque = deque(maxlen=_BINGO_QUEUE_SIZE)
-        def __init__(self):
+        def __init__(self, __event_stream: __sse_handler):
+            self.current_bingo = 0
+            self.__event_stream = __event_stream
             pass
 
         class __evt_handler():
@@ -100,6 +100,23 @@ class BingoServer():
                                             TRUNCATE TABLE card;""")
         
         @__evt_handler
+        async def bingo(self, arg: dict):
+            #going in the bingo bingo requet
+            async with self._db_pool.acquire() as conn:
+                async with conn.cursor(aiomysql.DictCursor) as cur:
+                    cur.execute(    """SELECT card.id
+                                        WHERE card.user_id = %s""", (arg['user_id'], ) )
+                    for card_id in cur.fetchall():
+                        completed_rows = 0
+                        for i in range(3):
+                            cur.execute(    """SELECT card.spaces_left_%s
+                                                WHERE card.id = %s""", (i, card_id, ) )
+                            if not (await cur.fetchone())[f'spaces_left_{i}']: completed_rows += 1
+                        if completed_rows > self.current_bingo:
+                            self.current_bingo = completed_rows
+                            print("aaaaaaaaaa")
+        
+        @__evt_handler
         async def check_spot(self, arg: dict):
             if(arg['space_number'] not in self._call_log): return {'resp': 0}
             async with self._db_pool.acquire() as conn:
@@ -110,9 +127,25 @@ class BingoServer():
                                             SET called = 1
                                             WHERE number = %s AND card.user_id = %s ;""", (arg['space_number'], arg['user_id'], )
                                         )
-                    print(cur.rowcount)
-                    return {'resp': 1 if cur.rowcount else 0}
-            
+                    if cur.rowcount:
+                        await cur.execute(  """SELECT card.id
+                                                from card
+                                                INNER JOIN space
+                                                ON space.card_id = card.id
+                                                WHERE space.number = %s and card.user_id = %s;""", (arg['space_number'], arg['user_id'], ) )
+                        card_id = (await cur.fetchone())['id']
+                        await cur.execute(  """SELECT space.idx
+                                                from space
+                                                INNER JOIN card
+                                                ON space.card_id = card.id
+                                                WHERE number = %s AND card.id = %s ;""", (arg['space_number'], card_id, ))
+                        row = math.floor( (await cur.fetchone())['idx'] / 9 )
+                        await cur.execute(  """UPDATE card
+                                                SET card.spaces_left_%s = card.spaces_left_%s - 1
+                                                WHERE card.id = %s""", (row, row, card_id, ) )
+                        return {'resp': 1}
+                    return {'resp': 0}
+        
         @__evt_handler
         async def request_cards(self, arg: dict):
             async with self._db_pool.acquire() as conn:
@@ -154,8 +187,8 @@ class BingoServer():
                             for j in range(9):
                                 card_sorted.update( {k*9+j:v for k,v in p( { idx:row.pop(0) for idx, row in enumerate(a) if j*10 <= row[0] < (j+1)*10 } ) } )
                                                 
-                            await cur.execute( """INSERT INTO card (spaces_left, user_id)
-                                                    VALUES (%s, %s)""", (15, arg['user_id'],))
+                            await cur.execute( """INSERT INTO card (user_id)
+                                                    VALUES (%s)""", (arg['user_id'],))
                             card_id = cur.lastrowid
                             for key, item in card_sorted.items():                                    
                                 await cur.execute ( """INSERT INTO space (idx, number, card_id)
